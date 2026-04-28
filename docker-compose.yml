@@ -1,0 +1,55 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: vonlaim
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: vonlaim
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres16_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vonlaim -d vonlaim"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  web:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://vonlaim:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@postgres:5432/vonlaim
+      APP_URL: https://www.vonlaim.de
+      SESSION_SECRET: ${SESSION_SECRET:?Set SESSION_SECRET in .env}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:?Set ADMIN_EMAIL in .env}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set ADMIN_PASSWORD in .env}
+      CONTACT_EMAIL: kontakt@vonlaim.de
+    ports:
+      - "3000:3000"
+    volumes:
+      - uploads:/app/public/uploads
+
+  caddy:
+    image: caddy:2-alpine
+    profiles: ["production"]
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - web
+
+volumes:
+  postgres16_data:
+  uploads:
+  caddy_data:
+  caddy_config:

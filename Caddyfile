@@ -1,0 +1,8 @@
+{
+  email kontakt@vonlaim.de
+}
+
+www.vonlaim.de, vonlaim.de {
+  encode zstd gzip
+  reverse_proxy web:3000
+}
