@@ -1642,16 +1642,28 @@ h3 {
 
 .service-card {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 1fr auto;
   min-height: 300px;
   gap: 1.3rem;
 }
 
 .offer-card {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 1fr auto;
   min-height: 360px;
   gap: 1.3rem;
+}
+
+.service-card > div,
+.offer-card > div {
+  align-self: start;
+}
+
+.service-card > .btn,
+.offer-card > .btn,
+.blog-card > .btn {
+  align-self: end;
+  width: 100%;
 }
 
 .offer-card p:not(.eyebrow) {
@@ -1789,8 +1801,12 @@ h3 {
 
 .blog-card {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 1fr auto;
   min-height: 250px;
+}
+
+.blog-card > div {
+  align-self: start;
 }
 
 .blog-meta {

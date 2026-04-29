@@ -19,6 +19,13 @@ const leadSchema = z.object({
   website: z.string().optional().default("")
 });
 
+function normalizeWebsite(value: string) {
+  const trimmed = value.trim();
+  if (!trimmed) return "";
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  return `https://${trimmed}`;
+}
+
 export async function submitLead(formData: FormData) {
   const parsed = leadSchema.safeParse({
     name: formData.get("name"),
@@ -59,7 +66,7 @@ export async function submitLead(formData: FormData) {
   const enrichedMessage = [
     parsed.data.trade ? `Gewerk: ${parsed.data.trade}` : "",
     parsed.data.region_goal ? `Region / Einsatzgebiet: ${parsed.data.region_goal}` : "",
-    parsed.data.current_website ? `Aktuelle Website: ${parsed.data.current_website}` : "",
+    parsed.data.current_website ? `Aktuelle Website: ${normalizeWebsite(parsed.data.current_website)}` : "",
     `Nachricht: ${parsed.data.message}`
   ]
     .filter(Boolean)

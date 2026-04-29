@@ -122,9 +122,9 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
               <input
                 id="current_website"
                 name="current_website"
-                type="url"
+                type="text"
                 inputMode="url"
-                placeholder="https://..."
+                placeholder="z. B. vonlaim.de"
                 autoComplete="url"
               />
               <small>Hilft uns, schneller konkrete Hinweise zu geben.</small>
