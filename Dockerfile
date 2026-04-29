@@ -18,6 +18,9 @@ ENV NEXT_TELEMETRY_DISABLED=1
 RUN apk add --no-cache ca-certificates
 RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nextjs
 
+COPY package.json package-lock.json* ./
+RUN npm ci --omit=dev
+
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
