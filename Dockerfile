@@ -21,6 +21,9 @@ RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nextjs
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/db ./db
+COPY --from=builder /app/scripts ./scripts
+COPY --from=builder /app/src/lib/site-data.ts ./src/lib/site-data.ts
 
 RUN mkdir -p public/uploads && chown -R nextjs:nodejs /app
 USER nextjs
