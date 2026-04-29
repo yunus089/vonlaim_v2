@@ -88,7 +88,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
           <form action={submitLead} className="card form-grid">
             {error ? (
               <p className="status draft">
-                Bitte ergänzen Sie Name, gültige E-Mail, Beschreibung und Datenschutz-Zustimmung.
+                Bitte prüfen Sie Name, E-Mail, Nachricht und die Datenschutz-Zustimmung.
               </p>
             ) : null}
             <div className="form-trap" aria-hidden="true">

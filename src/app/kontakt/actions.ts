@@ -8,13 +8,13 @@ import { sendLeadNotification } from "@/lib/mail";
 const leadSchema = z.object({
   name: z.string().trim().min(2).max(120),
   company: z.string().trim().max(160).optional().default(""),
-  email: z.string().email(),
+  email: z.string().trim().email(),
   phone: z.string().trim().max(60).optional().default(""),
   current_website: z.string().trim().max(240).optional().default(""),
   trade: z.string().trim().max(120).optional().default(""),
   region_goal: z.string().trim().max(160).optional().default(""),
   service_interest: z.string().trim().max(80).optional().default(""),
-  message: z.string().trim().min(10).max(2500),
+  message: z.string().trim().min(3).max(2500),
   consent: z.literal("on"),
   website: z.string().optional().default("")
 });
