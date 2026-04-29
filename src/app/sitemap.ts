@@ -1,13 +1,21 @@
 import type { MetadataRoute } from "next";
-import { getPublishedPosts } from "@/lib/public-content";
+import { getBranchPages, getPublishedPosts, getRegionPages } from "@/lib/public-content";
 
 const appUrl = process.env.APP_URL ?? "https://www.vonlaim.de";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
+  const [branchPages, regionPages] = await Promise.all([
+    getBranchPages(),
+    getRegionPages()
+  ]);
   const staticRoutes = [
     "",
     "/leistungen",
+    "/branchen",
+    ...branchPages.map((page) => `/branchen/${page.slug}`),
+    "/regionen",
+    ...regionPages.map((page) => `/regionen/${page.slug}`),
     "/warum-vonlaim",
     "/blog",
     "/faq",

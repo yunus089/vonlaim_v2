@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, FileText, MessageSquare, Sparkles, Wrench } from "lucide-react";
+import { ArrowRight, FileText, MapPinned, MessageSquare, Sparkles, Wrench } from "lucide-react";
 import { queryOne } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
@@ -10,9 +10,11 @@ async function count(table: string) {
 }
 
 export default async function AdminDashboard() {
-  const [posts, services, projects, leads] = await Promise.all([
+  const [posts, services, branchPages, regionPages, projects, leads] = await Promise.all([
     count("posts"),
     count("services"),
+    count("branch_pages"),
+    count("region_pages"),
     count("projects"),
     count("leads")
   ]);
@@ -20,6 +22,8 @@ export default async function AdminDashboard() {
   const metrics = [
     ["Blogbeiträge", posts, FileText, "/admin/content/posts"],
     ["Leistungen", services, Wrench, "/admin/content/services"],
+    ["Branchenseiten", branchPages, Sparkles, "/admin/content/branch_pages"],
+    ["Regionseiten", regionPages, MapPinned, "/admin/content/region_pages"],
     ["Projekte", projects, Sparkles, "/admin/content/projects"],
     ["Anfragen", leads, MessageSquare, "/admin/leads"]
   ] as const;

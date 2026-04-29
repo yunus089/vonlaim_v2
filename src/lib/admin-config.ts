@@ -17,6 +17,8 @@ export type AdminField = {
 export type AdminContentType =
   | "posts"
   | "services"
+  | "branch_pages"
+  | "region_pages"
   | "projects"
   | "testimonials"
   | "faqs"
@@ -81,6 +83,68 @@ export const contentConfigs: Record<AdminContentType, AdminContentConfig> = {
       { name: "summary", label: "Kurzbeschreibung", type: "textarea", required: true },
       { name: "body", label: "Detailtext", type: "richtext", required: true },
       { name: "icon", label: "Icon-Name", type: "text", help: "Lucide-Name: Hammer, MapPinned, Wrench..." },
+      { name: "status", label: "Status", type: "select", options: statusOptions },
+      { name: "sort_order", label: "Sortierung", type: "number" },
+      { name: "seo_title", label: "SEO Title", type: "text" },
+      { name: "seo_description", label: "SEO Description", type: "textarea" }
+    ]
+  },
+  branch_pages: {
+    type: "branch_pages",
+    table: "branch_pages",
+    singular: "Branchenseite",
+    plural: "Branchenseiten",
+    titleField: "title",
+    slugField: "slug",
+    orderBy: "sort_order ASC, title ASC",
+    listFields: ["title", "status", "audience", "sort_order"],
+    fields: [
+      { name: "title", label: "Seitentitel", type: "text", required: true },
+      { name: "slug", label: "Slug", type: "text", help: "Beispiel: webdesign-elektriker" },
+      { name: "h1", label: "H1", type: "text", required: true },
+      { name: "description", label: "Einleitung / Meta-Beschreibung", type: "textarea", required: true },
+      { name: "audience", label: "Zielgruppe", type: "text", help: "z. B. Elektrobetriebe und Elektrofachbetriebe" },
+      {
+        name: "services",
+        label: "Empfohlene Website-Module",
+        type: "textarea",
+        help: "Eine Zeile pro Punkt."
+      },
+      {
+        name: "pain_points",
+        label: "Typische Engpässe",
+        type: "textarea",
+        help: "Eine Zeile pro Punkt."
+      },
+      {
+        name: "faqs",
+        label: "FAQs",
+        type: "textarea",
+        help: "Eine FAQ pro Zeile im Format: Frage | Antwort"
+      },
+      { name: "status", label: "Status", type: "select", options: statusOptions },
+      { name: "sort_order", label: "Sortierung", type: "number" },
+      { name: "seo_title", label: "SEO Title", type: "text" },
+      { name: "seo_description", label: "SEO Description", type: "textarea" }
+    ]
+  },
+  region_pages: {
+    type: "region_pages",
+    table: "region_pages",
+    singular: "Regionseite",
+    plural: "Regionseiten",
+    titleField: "title",
+    slugField: "slug",
+    orderBy: "sort_order ASC, title ASC",
+    listFields: ["title", "status", "region", "sort_order"],
+    fields: [
+      { name: "title", label: "Seitentitel", type: "text", required: true },
+      { name: "slug", label: "Slug", type: "text", help: "Beispiel: webdesign-handwerker-muenchen" },
+      { name: "h1", label: "H1", type: "text", required: true },
+      { name: "description", label: "Einleitung / Meta-Beschreibung", type: "textarea", required: true },
+      { name: "region", label: "Hauptregion", type: "text", required: true },
+      { name: "nearby", label: "Orte und Bezüge", type: "textarea", help: "Eine Zeile pro Ort oder Bezug." },
+      { name: "focus", label: "Lokaler Fokus", type: "textarea" },
       { name: "status", label: "Status", type: "select", options: statusOptions },
       { name: "sort_order", label: "Sortierung", type: "number" },
       { name: "seo_title", label: "SEO Title", type: "text" },

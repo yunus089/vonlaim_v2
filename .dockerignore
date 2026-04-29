@@ -1,0 +1,15 @@
+.git
+.next
+.tmp
+node_modules
+output
+test-results
+coverage
+tmp
+*.log
+.env
+.env.local
+.env.production
+public/uploads/*
+!public/uploads/.gitkeep
+tsconfig.tsbuildinfo

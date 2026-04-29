@@ -34,11 +34,32 @@ export default function ImprintPage() {
           ausgewiesen. Eine Umsatzsteuer-Identifikationsnummer ist nicht
           vorhanden.
         </p>
-        <h2>Verantwortlich für den Inhalt</h2>
+        <h2>Verantwortlich für journalistisch-redaktionelle Inhalte</h2>
         <p>
+          Verantwortlich nach § 18 Abs. 2 MStV:<br />
           Yunus Kilic<br />
           Kriegerstr. 3a<br />
           82110 Germering
+        </p>
+        <h2>Verbraucherstreitbeilegung</h2>
+        <p>
+          vonLaim ist nicht verpflichtet und nicht bereit, an
+          Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
+          teilzunehmen.
+        </p>
+        <h2>Haftung für Inhalte</h2>
+        <p>
+          Als Diensteanbieter ist vonLaim nach den allgemeinen Gesetzen für
+          eigene Inhalte auf diesen Seiten verantwortlich. Eine Verpflichtung
+          zur Überwachung übermittelter oder gespeicherter fremder
+          Informationen besteht nur nach Maßgabe der gesetzlichen Vorschriften.
+        </p>
+        <h2>Haftung für Links</h2>
+        <p>
+          Diese Website kann Links zu externen Websites enthalten. Für deren
+          Inhalte sind ausschließlich die jeweiligen Anbieter verantwortlich.
+          Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht
+          erkennbar.
         </p>
       </div>
     </section>

@@ -25,11 +25,13 @@ export default async function PreviewPage({ params }: PreviewPageProps) {
   const summary =
     String(item.excerpt ?? "") ||
     String(item.summary ?? "") ||
+    String(item.description ?? "") ||
     String(item.quote ?? "") ||
     String(item.answer ?? "");
   const body =
     String(item.content ?? "") ||
     String(item.body ?? "") ||
+    [item.services, item.pain_points, item.faqs, item.nearby, item.focus].filter(Boolean).join("\n\n") ||
     [item.challenge, item.solution, item.result].filter(Boolean).join("\n\n") ||
     String(item.answer ?? "");
 

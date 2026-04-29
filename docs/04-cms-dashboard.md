@@ -29,12 +29,15 @@ Das Dashboard verwaltet:
 
 - Blogbeiträge
 - Leistungen
+- Branchenseiten
+- Regionseiten
 - Projekte / Referenzen
 - Testimonials
 - FAQs
 - Startseiten-Blöcke
 - Medien
 - Anfragen
+- Analytics
 - Grundeinstellungen
 
 ## Blogbeitrag erstellen
@@ -124,6 +127,57 @@ Regel:
 
 Keine erfundenen Kunden, Zahlen oder Bewertungen veröffentlichen.
 
+## Branchenseiten verwalten
+
+Branchenseiten sind unter `Branchenseiten` pflegbar.
+
+Felder:
+
+- Seitentitel
+- Slug
+- H1
+- Einleitung / Meta-Beschreibung
+- Zielgruppe
+- empfohlene Website-Module
+- typische Engpässe
+- FAQs im Format `Frage | Antwort`
+- Status
+- Sortierung
+- SEO-Felder
+
+Live-Verhalten:
+
+Veröffentlichte Branchenseiten erscheinen unter `/branchen/[slug]` und im Branchen-Hub `/branchen`.
+
+Regel:
+
+Keine dünnen Keyword-Seiten veröffentlichen. Jede Branchenseite braucht echten Gewerke-Bezug, konkrete Kundenfragen und klare Nutzenlogik.
+
+## Regionseiten verwalten
+
+Regionseiten sind unter `Regionseiten` pflegbar.
+
+Felder:
+
+- Seitentitel
+- Slug
+- H1
+- Einleitung / Meta-Beschreibung
+- Hauptregion
+- Orte und Bezüge
+- lokaler Fokus
+- Status
+- Sortierung
+- SEO-Felder
+
+Live-Verhalten:
+
+Veröffentlichte Regionseiten erscheinen unter `/regionen/[slug]` und im Regionen-Hub `/regionen`.
+
+Regel:
+
+Keine kopierten Ortsseiten mit nur ausgetauschtem Städtenamen. Jede Regionseite braucht echten lokalen Nutzen.
+
 ## Testimonials
 
 Testimonials sollten nur veröffentlicht werden, wenn:
@@ -190,6 +244,35 @@ Gespeichert werden:
 - Nachricht
 - Einwilligung
 - Zeitpunkt
+
+Die neuen Website-Check-Felder werden in der Nachricht strukturiert gespeichert:
+
+- aktuelle Website
+- Gewerk / Branche
+- Region / Einsatzgebiet
+
+## Analytics
+
+Analytics ist unter `/admin/analytics` sichtbar.
+
+Gemessen wird nur nach aktiver Analytics-Einwilligung:
+
+- Seitenaufrufe
+- Sessions
+- Klicks
+- Formularstart
+- Formularabsendung
+- Scroll-Tiefe
+- Top-Seiten
+- Top-Klicks
+- Referrer
+- letzte Events
+
+Datenschutz:
+
+- keine externen Tracking-Skripte
+- IP-Adressen werden gehasht
+- Analytics startet erst nach Zustimmung
 
 Für Produktion empfohlen:
 

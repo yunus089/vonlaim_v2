@@ -145,5 +145,7 @@ function revalidateFor(type: AdminContentType) {
   revalidatePath("/sitemap.xml");
   if (type === "posts") revalidatePath("/blog");
   if (type === "services") revalidatePath("/leistungen");
+  if (type === "branch_pages") revalidatePath("/branchen");
+  if (type === "region_pages") revalidatePath("/regionen");
   if (type === "faqs") revalidatePath("/faq");
 }

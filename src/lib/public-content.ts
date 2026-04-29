@@ -1,4 +1,5 @@
 import { query, queryOne } from "@/lib/db";
+import { branchLandingPages, regionLandingPages } from "@/lib/site-data";
 
 export type Service = {
   id: string;
@@ -68,6 +69,127 @@ export type ContentBlock = {
   cta_label: string;
   cta_href: string;
 };
+
+export type BranchPage = {
+  id: string;
+  slug: string;
+  title: string;
+  h1: string;
+  description: string;
+  audience: string;
+  services: string[];
+  painPoints: string[];
+  faqs: Array<[string, string]>;
+  seo_title: string;
+  seo_description: string;
+  sort_order: number;
+};
+
+export type RegionPage = {
+  id: string;
+  slug: string;
+  title: string;
+  h1: string;
+  description: string;
+  region: string;
+  nearby: string[];
+  focus: string;
+  seo_title: string;
+  seo_description: string;
+  sort_order: number;
+};
+
+type BranchPageRow = Omit<BranchPage, "services" | "painPoints" | "faqs"> & {
+  services: string;
+  pain_points: string;
+  faqs: string;
+};
+
+type RegionPageRow = Omit<RegionPage, "nearby"> & {
+  nearby: string;
+};
+
+function lines(value: string) {
+  return value
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+}
+
+function faqLines(value: string): Array<[string, string]> {
+  return lines(value)
+    .map((line) => {
+      const [question, ...answer] = line.split("|");
+      return [question?.trim() ?? "", answer.join("|").trim()] as [string, string];
+    })
+    .filter(([question, answer]) => question && answer);
+}
+
+function fallbackBranchPages(): BranchPage[] {
+  return branchLandingPages.map((page, index) => ({
+    id: `fallback-branch-${page.slug}`,
+    slug: page.slug,
+    title: page.title,
+    h1: page.h1,
+    description: page.description,
+    audience: page.audience,
+    services: page.services,
+    painPoints: page.painPoints,
+    faqs: page.faqs.map(([question, answer]) => [question, answer] as [string, string]),
+    seo_title: `${page.title} | vonLaim`,
+    seo_description: page.description,
+    sort_order: (index + 1) * 10
+  }));
+}
+
+function fallbackRegionPages(): RegionPage[] {
+  return regionLandingPages.map((page, index) => ({
+    id: `fallback-region-${page.slug}`,
+    slug: page.slug,
+    title: page.title,
+    h1: page.h1,
+    description: page.description,
+    region: page.region,
+    nearby: page.nearby,
+    focus: page.focus,
+    seo_title: `${page.title} | vonLaim`,
+    seo_description: page.description,
+    sort_order: (index + 1) * 10
+  }));
+}
+
+function mapBranchPage(row: BranchPageRow): BranchPage {
+  return {
+    id: row.id,
+    slug: row.slug,
+    title: row.title,
+    h1: row.h1,
+    description: row.description,
+    audience: row.audience,
+    services: lines(row.services),
+    painPoints: lines(row.pain_points),
+    faqs: faqLines(row.faqs),
+    seo_title: row.seo_title,
+    seo_description: row.seo_description,
+    sort_order: row.sort_order
+  };
+}
+
+function mapRegionPage(row: RegionPageRow): RegionPage {
+  return {
+    id: row.id,
+    slug: row.slug,
+    title: row.title,
+    h1: row.h1,
+    description: row.description,
+    region: row.region,
+    nearby: lines(row.nearby),
+    focus: row.focus,
+    seo_title: row.seo_title,
+    seo_description: row.seo_description,
+    sort_order: row.sort_order
+  };
+}
 
 const fallbackServices: Service[] = [
   {
@@ -485,5 +607,73 @@ export async function getTestimonials(limit = 4) {
     return result.rows;
   } catch {
     return [];
+  }
+}
+
+export async function getBranchPages() {
+  try {
+    const result = await query<BranchPageRow>(
+      `
+        SELECT id, slug, title, h1, description, audience, services, pain_points,
+               faqs, seo_title, seo_description, sort_order
+        FROM branch_pages
+        WHERE status = 'published'
+        ORDER BY sort_order ASC, title ASC
+      `
+    );
+    return result.rows.map(mapBranchPage);
+  } catch {
+    return fallbackBranchPages();
+  }
+}
+
+export async function getBranchPageBySlug(slug: string) {
+  try {
+    const row = await queryOne<BranchPageRow>(
+      `
+        SELECT id, slug, title, h1, description, audience, services, pain_points,
+               faqs, seo_title, seo_description, sort_order
+        FROM branch_pages
+        WHERE slug = $1 AND status = 'published'
+      `,
+      [slug]
+    );
+    return row ? mapBranchPage(row) : null;
+  } catch {
+    return fallbackBranchPages().find((page) => page.slug === slug) ?? null;
+  }
+}
+
+export async function getRegionPages() {
+  try {
+    const result = await query<RegionPageRow>(
+      `
+        SELECT id, slug, title, h1, description, region, nearby, focus,
+               seo_title, seo_description, sort_order
+        FROM region_pages
+        WHERE status = 'published'
+        ORDER BY sort_order ASC, title ASC
+      `
+    );
+    return result.rows.map(mapRegionPage);
+  } catch {
+    return fallbackRegionPages();
+  }
+}
+
+export async function getRegionPageBySlug(slug: string) {
+  try {
+    const row = await queryOne<RegionPageRow>(
+      `
+        SELECT id, slug, title, h1, description, region, nearby, focus,
+               seo_title, seo_description, sort_order
+        FROM region_pages
+        WHERE slug = $1 AND status = 'published'
+      `,
+      [slug]
+    );
+    return row ? mapRegionPage(row) : null;
+  } catch {
+    return fallbackRegionPages().find((page) => page.slug === slug) ?? null;
   }
 }

@@ -43,7 +43,7 @@ export default async function FaqPage() {
   return (
     <>
       <JsonLd data={faqSchema} />
-      <section className="section">
+      <section className="section compact-hero">
         <div className="container">
           <span className="eyebrow">FAQ</span>
           <h1>Antworten auf die Einwände, die vor einem Website-Projekt normal sind.</h1>
@@ -54,7 +54,7 @@ export default async function FaqPage() {
           </p>
           <div className="hero-cta">
             <Link className="btn btn-accent" href="/kontakt">
-              Website einschätzen lassen
+              Kostenlosen Website-Check anfragen
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>
@@ -80,7 +80,7 @@ export default async function FaqPage() {
               ein späterer Zeitpunkt sinnvoll ist.
             </p>
             <Link className="btn btn-accent" href="/kontakt">
-              Website einschätzen lassen
+              Website-Check anfragen
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>

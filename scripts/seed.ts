@@ -1,5 +1,6 @@
 import bcrypt from "bcryptjs";
 import { Client } from "pg";
+import { branchLandingPages, regionLandingPages } from "../src/lib/site-data";
 
 const connectionString =
   process.env.DATABASE_URL ?? "postgres://vonlaim:vonlaim@localhost:5433/vonlaim";
@@ -275,6 +276,66 @@ async function main() {
       "Weil die Website schnell verständlich machen sollte, was Sie leisten, wo Sie arbeiten, wie Sie vorgehen und warum man Ihnen vertrauen kann. Gute Webtexte beantworten Fragen, die Kunden sonst unausgesprochen im Kopf behalten.",
       "Vertrauen",
       220
+    ],
+    [
+      "Welche Website-Struktur braucht ein Elektriker?",
+      "Eine gute Elektriker-Website sollte Leistungen wie Installation, Sanierung, Wallbox, Smart Home, PV-Anbindung und Wartung verständlich trennen. Zusätzlich braucht sie Region, Kontaktweg, Ablauf, Bilder und FAQ, damit Kunden schnell erkennen, ob der Betrieb passt.",
+      "Branchen",
+      230
+    ],
+    [
+      "Was gehört auf eine gute Website für SHK-Betriebe?",
+      "Wichtig sind klare Bereiche für Heizung, Sanitär, Bad, Wartung und Modernisierung, dazu Einzugsgebiet, Ablauf, Kontaktmöglichkeiten, FAQ und echte Bilder. Kunden müssen schnell sehen, welche Aufgaben der Betrieb übernimmt.",
+      "Branchen",
+      240
+    ],
+    [
+      "Braucht jede Leistung eine eigene Unterseite?",
+      "Nicht jede Kleinigkeit braucht eine eigene Seite. Eigene Unterseiten sind sinnvoll, wenn eine Leistung eigene Suchanfragen, eigene Fragen, eigene Zielkunden oder einen eigenen Anfrageweg hat. So bleibt die Website klar und wird nicht künstlich aufgebläht.",
+      "SEO",
+      250
+    ],
+    [
+      "Sollte ein Handwerksbetrieb Seiten für einzelne Orte erstellen?",
+      "Regionseiten können sinnvoll sein, wenn sie echten Nutzen bieten: konkrete Einzugsgebiete, lokale Bezüge, passende Leistungen, FAQ und Kontaktwege. Dünne Ortsseiten mit ausgetauschten Städtenamen sollten vermieden werden.",
+      "Local SEO",
+      260
+    ],
+    [
+      "Wie viele Bilder braucht eine gute Handwerker-Website?",
+      "Wichtiger als die Menge ist die Glaubwürdigkeit. Sinnvoll sind echte Bilder von Team, Arbeit, Fahrzeugen, Projekten und Betrieb. Wenn noch keine guten Bilder vorhanden sind, kann die Website zunächst sauber geplant und später mit echten Motiven verbessert werden.",
+      "Inhalte",
+      270
+    ],
+    [
+      "Was ist beim Relaunch einer Handwerker-Website wichtig?",
+      "Ein Relaunch sollte bestehende Sichtbarkeit schützen, wichtige Inhalte übernehmen oder verbessern, Weiterleitungen planen, Leistungen neu ordnen und den Kontaktweg vereinfachen. Nur die Optik zu erneuern reicht meistens nicht.",
+      "Relaunch",
+      280
+    ],
+    [
+      "Wie vermeidet man falsche Anfragen über die Website?",
+      "Die Website sollte klar zeigen, welche Leistungen, Regionen, Projektgrößen und Kundentypen passen. Zusätzlich helfen FAQ, Beispielprojekte, verständliche Kontaktfelder und Hinweise zum Ablauf. So melden sich eher passende Interessenten.",
+      "Anfragen",
+      290
+    ],
+    [
+      "Kann eine Website auch bei der Mitarbeitersuche helfen?",
+      "Ja. Bewerber prüfen oft online, wie professionell und sympathisch ein Betrieb wirkt. Eine klare Website mit Team, Arbeitsweise, Projekten und Kontaktmöglichkeiten kann Vertrauen schaffen, auch wenn Recruiting nicht das Hauptziel ist.",
+      "Nutzen",
+      300
+    ],
+    [
+      "Was unterscheidet Local SEO von normalem SEO?",
+      "Local SEO konzentriert sich auf regionale Suchanfragen. Entscheidend sind Standort, Einzugsgebiet, Leistungen, lokale Inhalte, Google-Unternehmensprofil, Kontaktinformationen und Vertrauenssignale. Normales SEO ist oft breiter und weniger ortsbezogen.",
+      "Local SEO",
+      310
+    ],
+    [
+      "Was bekomme ich im kostenlosen Website-Check?",
+      "Im Website-Check schauen wir auf aktuelle Website, Gewerk, Region, Ziele, Struktur, Texte, lokale Sichtbarkeit und Kontaktweg. Danach wissen Sie, ob ein Relaunch, ein kleiner Umbau oder ein späterer Zeitpunkt sinnvoll ist.",
+      "Ablauf",
+      320
     ]
   ];
 
@@ -298,6 +359,74 @@ async function main() {
         ON CONFLICT DO NOTHING
       `,
       [question, answer, category, sort]
+    );
+  }
+
+  for (const [index, page] of branchLandingPages.entries()) {
+    await client.query(
+      `
+        INSERT INTO branch_pages(slug, title, h1, description, audience, services, pain_points, faqs, status, sort_order, seo_title, seo_description)
+        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,'published',$9,$10,$11)
+        ON CONFLICT (slug) DO UPDATE
+        SET title = EXCLUDED.title,
+            h1 = EXCLUDED.h1,
+            description = EXCLUDED.description,
+            audience = EXCLUDED.audience,
+            services = EXCLUDED.services,
+            pain_points = EXCLUDED.pain_points,
+            faqs = EXCLUDED.faqs,
+            status = EXCLUDED.status,
+            sort_order = EXCLUDED.sort_order,
+            seo_title = EXCLUDED.seo_title,
+            seo_description = EXCLUDED.seo_description,
+            updated_at = now()
+      `,
+      [
+        page.slug,
+        page.title,
+        page.h1,
+        page.description,
+        page.audience,
+        page.services.join("\n"),
+        page.painPoints.join("\n"),
+        page.faqs.map(([question, answer]) => `${question} | ${answer}`).join("\n"),
+        (index + 1) * 10,
+        `${page.title} | vonLaim`,
+        page.description
+      ]
+    );
+  }
+
+  for (const [index, page] of regionLandingPages.entries()) {
+    await client.query(
+      `
+        INSERT INTO region_pages(slug, title, h1, description, region, nearby, focus, status, sort_order, seo_title, seo_description)
+        VALUES ($1,$2,$3,$4,$5,$6,$7,'published',$8,$9,$10)
+        ON CONFLICT (slug) DO UPDATE
+        SET title = EXCLUDED.title,
+            h1 = EXCLUDED.h1,
+            description = EXCLUDED.description,
+            region = EXCLUDED.region,
+            nearby = EXCLUDED.nearby,
+            focus = EXCLUDED.focus,
+            status = EXCLUDED.status,
+            sort_order = EXCLUDED.sort_order,
+            seo_title = EXCLUDED.seo_title,
+            seo_description = EXCLUDED.seo_description,
+            updated_at = now()
+      `,
+      [
+        page.slug,
+        page.title,
+        page.h1,
+        page.description,
+        page.region,
+        page.nearby.join("\n"),
+        page.focus,
+        (index + 1) * 10,
+        `${page.title} | vonLaim`,
+        page.description
+      ]
     );
   }
 
@@ -348,10 +477,10 @@ async function main() {
     ],
     [
       "home_final_cta",
-      "Lassen Sie uns prüfen, was Ihre Website besser leisten kann.",
-      "Kostenloses Erstgespräch",
-      "In einem kurzen Gespräch schauen wir auf Ihren Betrieb, Ihre aktuelle Website und Ihre wichtigsten Ziele. Danach wissen Sie, welche nächsten Schritte sinnvoll sind und ob eine Zusammenarbeit passt.",
-      "Website einschätzen lassen",
+      "Passt Ihre Website noch zu Ihrem Betrieb?",
+      "Kostenloser Website-Check",
+      "Wenn Ihre Website veraltet wirkt, unklare Anfragen bringt oder Ihre Leistungen nicht sauber erklärt, lohnt sich ein ruhiger Blick von außen. Im Website-Check klären wir, was ein sinnvoller nächster Schritt wäre.",
+      "Kostenlosen Website-Check anfragen",
       "/kontakt"
     ]
   ];

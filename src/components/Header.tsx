@@ -30,7 +30,7 @@ export function Header() {
           </a>
           <Link className="btn btn-accent" href="/kontakt">
             <Calendar size={18} aria-hidden="true" />
-            Erstgespräch anfragen
+            Website-Check anfragen
           </Link>
         </div>
       </div>

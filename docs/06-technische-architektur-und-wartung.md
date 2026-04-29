@@ -33,9 +33,10 @@ Eine vollständig freie Pagebuilder-Struktur wurde bewusst vermieden, weil sie o
 
 ## Datenbank
 
-Migration:
+Migrationen:
 
-`db/migrations/001_init.sql`
+- `db/migrations/001_init.sql`
+- `db/migrations/002_cms_branch_region_analytics.sql`
 
 Tabellen:
 
@@ -44,12 +45,15 @@ Tabellen:
 - `media`
 - `posts`
 - `services`
+- `branch_pages`
+- `region_pages`
 - `projects`
 - `testimonials`
 - `faqs`
 - `content_blocks`
 - `site_settings`
 - `leads`
+- `analytics_events`
 
 Migrationsbefehl:
 
@@ -161,11 +165,15 @@ Aktuell:
 - Validierung mit Zod
 - Speicherung in `leads`
 - Weiterleitung zu `/danke`
+- Honeypot-Feld gegen einfache Bots
+- Feldlängenbegrenzung
+- einfache Wiederholungsbremse pro E-Mail-Adresse
+- Website-Check-Felder werden strukturiert in der Lead-Nachricht gespeichert
 
 Nächste Ausbaustufen:
 
 - E-Mail-Benachrichtigung via SMTP
-- Spam-Schutz
+- stärkeres Rate Limiting nach IP oder Edge-Middleware
 - Rate Limiting
 - Lead-Status
 - Export
@@ -181,6 +189,14 @@ Empfohlen:
 - Restore-Test mindestens quartalsweise
 
 ## Monitoring
+
+Implementiert:
+
+- internes First-party Analytics-Dashboard unter `/admin/analytics`
+- Events nur nach Analytics-Einwilligung
+- Seitenaufrufe, Sessions, Klicks, Scroll-Tiefe, Formularstart und Formularabsendung
+- gehashte IP statt Klar-IP
+- keine externen Tracking- oder Werbeskripte
 
 Empfohlen:
 
@@ -198,7 +214,7 @@ Kurzfristig:
 
 - weitere CMS-Felder
 - SMTP
-- Branchen- und Regionseiten
+- weitere Branchen- und Regionseiten im CMS
 - Projekt-Detailseiten
 
 Mittelfristig:
@@ -214,4 +230,4 @@ Langfristig:
 - Mandantenfähigkeit für Kundenprojekte
 - Audit-Logs
 - Workflow-Freigaben
-- Analytics-Dashboard
+- tieferes Analytics-Dashboard mit Zeitreihen und Export

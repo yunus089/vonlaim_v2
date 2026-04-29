@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ConsentSettingsButton } from "@/components/ConsentSettingsButton";
 
 export function Footer() {
   return (
@@ -18,6 +19,8 @@ export function Footer() {
         <div className="footer-links">
           <strong>Seiten</strong>
           <Link href="/leistungen">Leistungen</Link>
+          <Link href="/branchen">Branchen</Link>
+          <Link href="/regionen">Regionen</Link>
           <Link href="/warum-vonlaim">Warum vonLaim</Link>
           <Link href="/blog">Blog</Link>
           <Link href="/faq">FAQ</Link>
@@ -26,13 +29,14 @@ export function Footer() {
           <strong>Kontakt</strong>
           <a href="tel:+4915205200600">+49 152 05200600</a>
           <a href="mailto:kontakt@vonlaim.de">kontakt@vonlaim.de</a>
-          <Link href="/kontakt">Erstgespräch anfragen</Link>
+          <Link href="/kontakt">Website-Check anfragen</Link>
         </div>
         <div className="footer-links">
           <strong>Rechtliches</strong>
           <Link href="/impressum">Impressum</Link>
           <Link href="/datenschutz">Datenschutz</Link>
           <Link href="/cookies">Cookies</Link>
+          <ConsentSettingsButton />
         </div>
       </div>
     </footer>

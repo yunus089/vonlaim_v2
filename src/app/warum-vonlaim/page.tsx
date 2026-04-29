@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function WhyPage() {
   return (
     <>
-      <section className="section">
+      <section className="section compact-hero">
         <div className="container">
           <span className="eyebrow">Warum vonLaim</span>
           <h1>Für Betriebe, die online so professionell wirken wollen wie vor Ort.</h1>
@@ -32,7 +32,7 @@ export default function WhyPage() {
           </p>
           <div className="hero-cta">
             <Link className="btn btn-accent" href="/kontakt">
-              Website einschätzen lassen
+              Website-Check anfragen
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>
@@ -84,7 +84,7 @@ export default function WhyPage() {
           </div>
           <div className="hero-cta">
             <Link className="btn btn-accent" href="/kontakt">
-              Website einschätzen lassen
+              Kostenlosen Website-Check anfragen
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>

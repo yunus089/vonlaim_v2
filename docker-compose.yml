@@ -28,7 +28,7 @@ services:
       SESSION_SECRET: ${SESSION_SECRET:?Set SESSION_SECRET in .env}
       ADMIN_EMAIL: ${ADMIN_EMAIL:?Set ADMIN_EMAIL in .env}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set ADMIN_PASSWORD in .env}
-      CONTACT_EMAIL: kontakt@vonlaim.de
+      CONTACT_EMAIL: ${CONTACT_EMAIL:-kontakt@vonlaim.de}
     ports:
       - "3000:3000"
     volumes:

@@ -5,19 +5,26 @@ import {
   ArrowUpRight,
   BadgeCheck,
   CheckCircle2,
+  Clock3,
   ClipboardCheck,
   Construction,
   FileSearch,
   Gauge,
   Globe2,
+  Hammer,
   MapPinned,
+  MessageSquareText,
   MousePointerClick,
   Phone,
   Radar,
   Route,
+  ScanSearch,
   Search,
   ShieldCheck,
-  Sparkles
+  Sparkles,
+  Target,
+  Wrench,
+  XCircle
 } from "lucide-react";
 import { HeroMotionBackdrop } from "@/components/HeroMotionBackdrop";
 import { HeroLab } from "@/components/HeroLab";
@@ -30,6 +37,13 @@ import {
   getPublishedPosts,
   getServices
 } from "@/lib/public-content";
+import {
+  fitFor,
+  notFitFor,
+  projectPaths,
+  websiteCheckSteps,
+  whyNowReasons
+} from "@/lib/site-data";
 
 export const dynamic = "force-dynamic";
 
@@ -150,6 +164,21 @@ export default async function HomePage() {
           "Website-Relaunch für lokale Betriebe",
           "CMS für Unternehmenswebsites"
         ],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Website-Angebote für Handwerksbetriebe",
+          itemListElement: projectPaths.map((path) => ({
+            "@type": "Offer",
+            name: path.title,
+            description: `${path.forWhom} ${path.outcome}`,
+            url: `${siteUrl}${path.href}`
+          }))
+        },
+        potentialAction: {
+          "@type": "ContactAction",
+          name: "Kostenlosen Website-Check anfragen",
+          target: `${siteUrl}/kontakt`
+        },
         makesOffer: services.map((service) => ({
           "@type": "Offer",
           itemOffered: {
@@ -210,24 +239,27 @@ export default async function HomePage() {
               Webdesign für Handwerk in Bayern
             </span>
             <h1>
-              Eine Website, die schon vor dem ersten Anruf überzeugt.
+              Ihre Handwerker-Website sollte vor dem ersten Anruf Vertrauen schaffen.
             </h1>
             <p className="lead">
-              Ihre Arbeit überzeugt vor Ort. vonLaim entwickelt hochwertige
-              Websites für Handwerksbetriebe und technische Dienstleister.
-              Klar aufgebaut, lokal auffindbar
-              und so formuliert, dass Interessenten schnell verstehen, warum
-              Ihr Betrieb der richtige Ansprechpartner ist.
+              vonLaim entwickelt Websites für Handwerksbetriebe und technische
+              Dienstleister, die Leistungen klar erklären, lokal besser
+              eingeordnet werden und passende Anfragen erleichtern. Ohne
+              Baukasten-Look, ohne leere Versprechen und ohne Texte, die nach
+              Werbeagentur klingen.
             </p>
             <div className="hero-cta">
               <Link className="btn btn-accent" href="/kontakt" data-magnetic>
-                Website einschätzen lassen
+                Kostenlosen Website-Check anfragen
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
               <Link className="btn btn-secondary" href="/leistungen" data-magnetic>
                 Leistungen ansehen
               </Link>
             </div>
+            <p className="cta-microcopy">
+              15 bis 20 Minuten. Kein Newsletter. Ehrliche Einschätzung, welcher nächste Schritt sinnvoll ist.
+            </p>
             <div className="trust-row" aria-label="Vertrauensmerkmale">
               <span className="chip">
                 <Construction size={16} aria-hidden="true" />
@@ -239,7 +271,7 @@ export default async function HomePage() {
               </span>
               <span className="chip">
                 <Phone size={16} aria-hidden="true" />
-                Klare Texte, kurze Kontaktwege
+                Passende Anfragen statt Rätselraten
               </span>
             </div>
           </Reveal>
@@ -257,7 +289,51 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="section alt">
+      <section className="section check-section">
+        <div className="container check-layout">
+          <div className="check-copy">
+            <span className="eyebrow">
+              <ScanSearch size={16} aria-hidden="true" />
+              Kostenloser Website-Check
+            </span>
+            <h2>Erst prüfen, dann entscheiden, ob ein Projekt wirklich sinnvoll ist.</h2>
+            <p>
+              Viele Betriebe brauchen nicht sofort „alles neu“. Manchmal ist
+              die Struktur der größte Hebel, manchmal der Kontaktweg, manchmal
+              die lokale Sichtbarkeit. Im Website-Check klären wir, was Ihrer
+              Website gerade am meisten hilft.
+            </p>
+            <div className="hero-cta">
+              <Link className="btn btn-accent" href="/kontakt">
+                Website-Check anfragen
+                <ArrowRight size={18} aria-hidden="true" />
+              </Link>
+              <a className="btn btn-secondary" href="tel:+4915205200600">
+                Direkt anrufen
+              </a>
+            </div>
+            <p className="cta-microcopy">
+              Kostenlos. Ohne automatische Angebotsstrecke. Wenn kein Relaunch nötig ist, sagen wir das.
+            </p>
+          </div>
+          <div className="check-steps">
+            {websiteCheckSteps.map((step, index) => {
+              const StepIcon = [Clock3, ShieldCheck, Target][index] ?? CheckCircle2;
+              return (
+                <article className="card step-card" key={step.title}>
+                  <span className="card-icon">
+                    <StepIcon size={22} aria-hidden="true" />
+                  </span>
+                  <h3>{step.title}</h3>
+                  <p className="muted">{step.text}</p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="container">
           <div className="section-head">
             <div>
@@ -415,7 +491,52 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="section alt">
+      <section className="section alt offer-path-section">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <span className="eyebrow">
+                <Route size={16} aria-hidden="true" />
+                Projektwege
+              </span>
+              <h2>Drei sinnvolle Einstiege, je nachdem wo Ihr Betrieb gerade steht.</h2>
+            </div>
+            <p>
+              Nicht jeder Betrieb braucht sofort einen großen Relaunch. vonLaim
+              macht den nächsten Schritt greifbar: prüfen, neu aufbauen,
+              verbessern oder nach dem Launch weiter ausbauen.
+            </p>
+          </div>
+          <div className="grid-4">
+            {projectPaths.map((path, index) => {
+              const PathIcon = [ScanSearch, Hammer, Construction, Wrench][index] ?? Sparkles;
+              return (
+                <Reveal delay={index * 70} key={path.title}>
+                  <article className="card offer-card">
+                    <div>
+                      <span className="card-icon">
+                        <PathIcon size={22} aria-hidden="true" />
+                      </span>
+                      <p className="eyebrow" style={{ marginTop: "1.2rem" }}>
+                        {path.eyebrow}
+                      </p>
+                      <h3>{path.title}</h3>
+                      <p>{path.forWhom}</p>
+                      <p className="muted">{path.outcome}</p>
+                    </div>
+                    <Link href={path.href} className="btn btn-secondary">
+                      {path.cta}
+                      <ArrowRight size={16} aria-hidden="true" />
+                    </Link>
+                  </article>
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="container">
           <div className="section-head">
             <div>
@@ -478,6 +599,51 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <section className="section alt">
+        <div className="container fit-grid">
+          <article className="fit-panel fit-positive">
+            <span className="eyebrow">
+              <CheckCircle2 size={16} aria-hidden="true" />
+              Für wen vonLaim passt
+            </span>
+            <h2>Für Betriebe, die online ernst genommen werden wollen.</h2>
+            <p>
+              vonLaim passt zu Handwerksbetrieben und technischen
+              Dienstleistern, die eine hochwertige Website möchten, aber keinen
+              komplizierten Agenturprozess brauchen.
+            </p>
+            <ul className="plain-list">
+              {fitFor.map((item) => (
+                <li key={item}>
+                  <CheckCircle2 size={18} aria-hidden="true" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+          <article className="fit-panel fit-negative">
+            <span className="eyebrow">
+              <XCircle size={16} aria-hidden="true" />
+              Nicht passend
+            </span>
+            <h2>Nicht die richtige Wahl, wenn Sie nur irgendeine schnelle Website suchen.</h2>
+            <p>
+              Die Seite soll kein unnötiges Projekt verkaufen. Sie soll zeigen,
+              wann Qualität, Struktur, regionale Sichtbarkeit und spätere
+              Pflege wirklich wichtig sind.
+            </p>
+            <ul className="plain-list">
+              {notFitFor.map((item) => (
+                <li key={item}>
+                  <XCircle size={18} aria-hidden="true" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </div>
+      </section>
+
       <section className="section">
         <div className="container">
           <div className="section-head">
@@ -532,6 +698,36 @@ export default async function HomePage() {
                 Sichtbare Ergebnisse nur mit belastbaren Daten
               </li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="section why-now-section">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <span className="eyebrow">
+                <MessageSquareText size={16} aria-hidden="true" />
+                Warum jetzt prüfen lassen?
+              </span>
+              <h2>Eine schwache Website kostet oft nicht laut. Sie kostet leise.</h2>
+            </div>
+            <p>
+              Wenn Ihre Website nicht klar zeigt, welche Aufträge Sie wollen,
+              entscheidet der Besucher selbst, ob Sie passen. Genau dort
+              entstehen falsche Anfragen, Preisdruck und unnötige Rückfragen.
+            </p>
+          </div>
+          <div className="grid-3">
+            {whyNowReasons.map((reason, index) => (
+              <Reveal delay={index * 80} key={reason.title}>
+                <article className="card reason-card">
+                  <Target size={22} aria-hidden="true" />
+                  <h3>{reason.title}</h3>
+                  <p className="muted">{reason.text}</p>
+                </article>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -622,12 +818,15 @@ export default async function HomePage() {
       <section className="section">
         <div className="container">
           <div className="cta-band">
-            <span className="eyebrow">{blocks.home_final_cta?.eyebrow ?? "Kostenloses Erstgespräch"}</span>
-            <h2>{blocks.home_final_cta?.title ?? "Bereit für einen besseren ersten Eindruck?"}</h2>
-            <p className="lead">{blocks.home_final_cta?.body}</p>
+            <span className="eyebrow">{blocks.home_final_cta?.eyebrow ?? "Kostenloser Website-Check"}</span>
+            <h2>{blocks.home_final_cta?.title ?? "Passt Ihre Website noch zu Ihrem Betrieb?"}</h2>
+            <p className="lead">
+              {blocks.home_final_cta?.body ??
+                "Wenn Ihre Website veraltet wirkt, unklare Anfragen bringt oder Ihre Leistungen nicht sauber erklärt, lohnt sich ein ruhiger Blick von außen. Im Website-Check klären wir, was ein sinnvoller nächster Schritt wäre."}
+            </p>
             <div className="hero-cta">
               <Link className="btn btn-accent" href={blocks.home_final_cta?.cta_href ?? "/kontakt"}>
-                {blocks.home_final_cta?.cta_label ?? "Erstgespräch anfragen"}
+                {blocks.home_final_cta?.cta_label ?? "Kostenlosen Website-Check anfragen"}
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
               <a className="btn btn-secondary" href="tel:+4915205200600">

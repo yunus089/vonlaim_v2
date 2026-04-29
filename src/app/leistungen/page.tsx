@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Icon } from "@/components/Icon";
 import { JsonLd } from "@/components/JsonLd";
 import { getServices } from "@/lib/public-content";
+import { projectPaths } from "@/lib/site-data";
 
 export const dynamic = "force-dynamic";
 
@@ -51,7 +52,7 @@ export default async function ServicesPage() {
   return (
     <>
       <JsonLd data={serviceSchema} />
-      <section className="section">
+      <section className="section compact-hero">
         <div className="container">
           <span className="eyebrow">Leistungen</span>
           <h1>Alles, was Ihre Handwerker-Website braucht, um verstanden, gefunden und angefragt zu werden.</h1>
@@ -63,7 +64,7 @@ export default async function ServicesPage() {
           </p>
           <div className="hero-cta">
             <Link className="btn btn-accent" href="/kontakt">
-              Website einschätzen lassen
+              Kostenlosen Website-Check anfragen
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>
@@ -71,6 +72,38 @@ export default async function ServicesPage() {
       </section>
 
       <section className="section alt">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <span className="eyebrow">Angebotslogik</span>
+              <h2>Kein Paketverkauf auf Verdacht. Erst der passende Umfang, dann das Angebot.</h2>
+            </div>
+            <p>
+              Der Website-Check klärt, ob ein kompletter Relaunch, eine neue
+              Startstruktur, ein Local-SEO-Ausbau oder laufende Pflege für
+              Ihren Betrieb der richtige nächste Schritt ist.
+            </p>
+          </div>
+          <div className="grid-4">
+            {projectPaths.map((path) => (
+              <article className="card offer-card" key={path.title}>
+                <div>
+                  <p className="eyebrow">{path.eyebrow}</p>
+                  <h3>{path.title}</h3>
+                  <p>{path.forWhom}</p>
+                  <p className="muted">{path.outcome}</p>
+                </div>
+                <Link href={path.href} className="btn btn-secondary">
+                  {path.cta}
+                  <ArrowRight size={16} aria-hidden="true" />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="container grid-2">
           {services.map((service) => (
             <article className="card service-card" key={service.id}>
@@ -119,8 +152,14 @@ export default async function ServicesPage() {
           </div>
           <div className="hero-cta">
             <Link className="btn btn-accent" href="/kontakt">
-              Website einschätzen lassen
+              Website-Check anfragen
               <ArrowRight size={18} aria-hidden="true" />
+            </Link>
+            <Link className="btn btn-secondary" href="/branchen">
+              Branchen ansehen
+            </Link>
+            <Link className="btn btn-secondary" href="/regionen">
+              Regionen ansehen
             </Link>
           </div>
         </div>

@@ -13,6 +13,9 @@ Implementiert:
 - BlogPosting-Schema für Blogbeiträge
 - FAQPage-Schema für sichtbare FAQs
 - OfferCatalog/Service-Schema für Leistungen
+- CollectionPage-Schema für Branchen- und Regionen-Hubs
+- Service-Schema und BreadcrumbList für Branchen- und Regionenseiten
+- `llms.txt` mit Kernantworten, Kontakt, Branchen- und Regionenlinks
 - indexierbare HTML-Inhalte
 
 Quellen:
@@ -28,12 +31,14 @@ Startpositionierung:
 - Bayern als Region
 - perspektivisch Deutschland
 - Handwerk und lokale Dienstleister als klare Zielgruppe
+- Germering, München und Landkreis Fürstenfeldbruck als erste konkrete regionale Einstiegspunkte
 
 Wichtige Signale:
 
 - sichtbarer regionaler Bezug im Hero
 - `areaServed` in JSON-LD
 - Kontaktseite
+- regionale Landingpages mit eigenem Nutzen
 - spätere konsistente NAP-Daten
 - spätere Google Business Profile Integration
 
@@ -49,10 +54,10 @@ Quelle:
 
 ## GEO-Strategie
 
-Empfohlene Struktur:
+Aktuelle Struktur:
 
-1. Erst eine starke Bayern-Seite.
-2. Dann nur Stadtseiten, wenn echter Bezug oder echte Referenzen vorhanden sind.
+1. Regionen-Hub `/regionen`.
+2. Erste regionale Seiten für München, Germering und Landkreis Fürstenfeldbruck.
 3. Keine massenhaft kopierten Stadtseiten.
 4. Jede Regionseite braucht spezifische Inhalte:
    - lokale Zielgruppe
@@ -63,21 +68,19 @@ Empfohlene Struktur:
 
 Beispiele:
 
-- `/regionen/bayern`
-- `/regionen/muenchen`
-- `/regionen/nuernberg`
-- `/regionen/augsburg`
+- `/regionen/webdesign-handwerker-muenchen`
+- `/regionen/webdesign-handwerker-germering`
+- `/regionen/webdesign-handwerker-fuerstenfeldbruck`
 
 ## Branchen-SEO
 
-Empfohlene Branchenstruktur:
+Aktuelle Branchenstruktur:
 
-- `/branchen/elektriker`
-- `/branchen/sanitaer-heizung`
-- `/branchen/dachdecker`
-- `/branchen/maler`
-- `/branchen/reinigung`
-- `/branchen/solar`
+- `/branchen/webdesign-elektriker`
+- `/branchen/webdesign-shk`
+- `/branchen/webdesign-dachdecker`
+- `/branchen/webdesign-maler`
+- `/branchen/webdesign-reinigungsfirma`
 
 Jede Branchenseite braucht:
 
@@ -110,6 +113,8 @@ Content-Regeln:
 - Aktualisierungsdaten bei Ratgebern
 - keine generischen KI-Massenartikel
 - Fakten und Zahlen nur mit Quelle
+- `llms.txt` hält zentrale Fakten, Kernantworten und wichtige URLs maschinenlesbar zusammen
+- wiederholbare Direktantworten erklären, was vonLaim macht, für wen es geeignet ist und wo die Agentur arbeitet
 
 Wichtig:
 
@@ -175,6 +180,7 @@ Don't:
 - keine erfundenen AggregateRatings
 - keine unsichtbaren FAQ-Schema-Fragen
 - keine LocalBusiness-Daten ohne echte Adresse/Telefonbasis
+- keine dünnen Branchen- oder Ortsseiten mit nur ausgetauschtem Keyword
 
 ## Performance und SEO
 

@@ -93,7 +93,7 @@ Positionierung:
 
 Primäre Conversion:
 
-- kostenloses Erstgespräch
+- kostenloser Website-Check
 - Kontaktformular
 - Telefon
 - E-Mail
@@ -139,20 +139,24 @@ Motion-Prinzip:
 Startseite als Entscheidungsstrecke:
 
 1. Hero: Zielgruppe, Ergebnis, Region, CTA
-2. Problem: starke Arbeit, schwacher digitaler Eindruck
-3. Leistungen: Website-System für lokale Nachfrage
-4. Prozess: klare Schritte statt Agentur-Nebel
-5. Referenzbereich: vorbereitet, aber ohne Fake-Proof
-6. Blog: sekundärer Trust- und SEO-Hebel
-7. FAQ: Einwände reduzieren
-8. Abschluss-CTA: kostenloses Erstgespräch
+2. Website-Check: Low-Risk-Einstieg mit ehrlicher Einschätzung
+3. Problem: starke Arbeit, schwacher digitaler Eindruck
+4. Projektwege: Check, Relaunch, neue Website, Local-SEO-Ausbau
+5. Leistungen: Website-System für lokale Nachfrage
+6. Branchen und Regionen: skalierbare Discoverability-Struktur
+7. Für wen / nicht für wen: klare Qualifizierung
+8. Prozess: klare Schritte statt Agentur-Nebel
+9. Referenzbereich: vorbereitet, aber ohne Fake-Proof
+10. Blog: sekundärer Trust- und SEO-Hebel
+11. FAQ: Einwände reduzieren
+12. Abschluss-CTA: kostenloser Website-Check
 
 CTA-Logik:
 
-- oben: Erstgespräch und Leistungen
-- mittig: Projekt besprechen
+- oben: Website-Check und Leistungen
+- mittig: Projektweg oder Website-Check
 - mobil: sticky Telefon und Termin
-- unten: finaler Gesprächs-CTA
+- unten: finaler Website-Check-CTA
 
 ## Phase 6: Technische Architektur
 

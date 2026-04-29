@@ -5,8 +5,10 @@ import {
   HelpCircle,
   Home,
   Image,
+  LineChart,
   LayoutDashboard,
   LogOut,
+  MapPinned,
   MessageSquare,
   Settings,
   Sparkles,
@@ -19,12 +21,15 @@ const nav = [
   ["Dashboard", "/admin", LayoutDashboard],
   ["Blog", "/admin/content/posts", FileText],
   ["Leistungen", "/admin/content/services", Wrench],
+  ["Branchenseiten", "/admin/content/branch_pages", Sparkles],
+  ["Regionseiten", "/admin/content/region_pages", MapPinned],
   ["Projekte", "/admin/content/projects", Sparkles],
   ["Testimonials", "/admin/content/testimonials", Star],
   ["FAQs", "/admin/content/faqs", HelpCircle],
   ["Startseiten-Blöcke", "/admin/content/content_blocks", Home],
   ["Medien", "/admin/media", Image],
   ["Anfragen", "/admin/leads", MessageSquare],
+  ["Analytics", "/admin/analytics", LineChart],
   ["Einstellungen", "/admin/settings", Settings]
 ] as const;
 

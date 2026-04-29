@@ -90,7 +90,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               sinnvoll sind.
             </p>
             <Link className="btn btn-accent" href="/kontakt">
-              Website einschätzen lassen
+              Website-Check anfragen
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>

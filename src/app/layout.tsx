@@ -5,6 +5,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { MotionOrchestrator } from "@/components/MotionOrchestrator";
+import { AnalyticsProvider } from "@/components/AnalyticsProvider";
+import { CookieConsent } from "@/components/CookieConsent";
 import "./globals.css";
 
 const appUrl = process.env.APP_URL ?? "https://www.vonlaim.de";
@@ -95,7 +97,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           "Handwerker-Websites",
           "Websites für lokale Dienstleister",
           "CMS für Unternehmenswebsites"
-        ]
+        ],
+        potentialAction: {
+          "@type": "ContactAction",
+          name: "Kostenlosen Website-Check anfragen",
+          target: `${appUrl}/kontakt`
+        }
       },
       {
         "@type": "WebSite",
@@ -119,9 +126,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd data={organization} />
         <div className="site-shell">
           <MotionOrchestrator />
+          <AnalyticsProvider />
           <Header />
           <main id="main">{children}</main>
           <Footer />
+          <CookieConsent />
           <div className="mobile-sticky" aria-label="Schnellkontakt">
             <a className="btn btn-secondary" href="tel:+4915205200600">
               <Phone size={18} aria-hidden="true" />
@@ -129,7 +138,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </a>
             <Link className="btn btn-accent" href="/kontakt">
               <Calendar size={18} aria-hidden="true" />
-              Termin
+              Check
             </Link>
           </div>
         </div>
