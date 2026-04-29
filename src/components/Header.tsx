@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Calendar, Phone } from "lucide-react";
+import { Calendar, Menu, Phone } from "lucide-react";
 
 const nav = [
   ["Leistungen", "/leistungen"],
@@ -33,6 +33,27 @@ export function Header() {
             Website-Check anfragen
           </Link>
         </div>
+        <details className="mobile-menu">
+          <summary aria-label="Menü öffnen">
+            <Menu size={20} aria-hidden="true" />
+            Menü
+          </summary>
+          <div className="mobile-menu-panel">
+            {nav.map(([label, href]) => (
+              <Link href={href} key={href}>
+                {label}
+              </Link>
+            ))}
+            <Link className="btn btn-accent" href="/kontakt">
+              <Calendar size={18} aria-hidden="true" />
+              Website-Check anfragen
+            </Link>
+            <a className="btn btn-secondary" href="tel:+4915205200600">
+              <Phone size={18} aria-hidden="true" />
+              Direkt anrufen
+            </a>
+          </div>
+        </details>
       </div>
     </header>
   );
