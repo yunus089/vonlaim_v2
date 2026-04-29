@@ -72,6 +72,21 @@ export async function submitLead(formData: FormData) {
     .filter(Boolean)
     .join("\n");
 
+  const duplicateLead = await query<{ count: string }>(
+    `
+      SELECT count(*)::text AS count
+      FROM leads
+      WHERE lower(email) = lower($1)
+        AND message = $2
+        AND created_at > now() - interval '5 minutes'
+    `,
+    [parsed.data.email, enrichedMessage]
+  );
+
+  if (Number(duplicateLead.rows[0]?.count ?? 0) > 0) {
+    redirect("/danke");
+  }
+
   await query(
     `
       INSERT INTO leads(name, company, email, phone, service_interest, message, consent)
