@@ -6,8 +6,8 @@ services:
       POSTGRES_USER: vonlaim
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
       POSTGRES_DB: vonlaim
-    ports:
-      - "5433:5432"
+    expose:
+      - "5432"
     volumes:
       - postgres16_data:/var/lib/postgresql/data
     healthcheck:
@@ -24,13 +24,19 @@ services:
         condition: service_healthy
     environment:
       DATABASE_URL: postgres://vonlaim:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@postgres:5432/vonlaim
-      APP_URL: https://www.vonlaim.de
+      APP_URL: ${APP_URL:-https://www.vonlaim.de}
       SESSION_SECRET: ${SESSION_SECRET:?Set SESSION_SECRET in .env}
+      ANALYTICS_SALT: ${ANALYTICS_SALT:-}
       ADMIN_EMAIL: ${ADMIN_EMAIL:?Set ADMIN_EMAIL in .env}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set ADMIN_PASSWORD in .env}
       CONTACT_EMAIL: ${CONTACT_EMAIL:-kontakt@vonlaim.de}
-    ports:
-      - "3000:3000"
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-465}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_FROM: ${SMTP_FROM:-}
+    expose:
+      - "3000"
     volumes:
       - uploads:/app/public/uploads
 
