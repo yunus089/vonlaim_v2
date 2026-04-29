@@ -54,13 +54,13 @@ export async function submitLead(formData: FormData) {
       SELECT count(*)::text AS count
       FROM leads
       WHERE lower(email) = lower($1)
-        AND created_at > now() - interval '30 minutes'
+        AND created_at > now() - interval '10 minutes'
     `,
     [parsed.data.email]
   );
 
-  if (Number(recentLeads.rows[0]?.count ?? 0) >= 2) {
-    redirect("/kontakt?error=1");
+  if (Number(recentLeads.rows[0]?.count ?? 0) >= 8) {
+    redirect("/kontakt?error=rate");
   }
 
   const enrichedMessage = [
