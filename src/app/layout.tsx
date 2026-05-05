@@ -20,11 +20,11 @@ export const metadata: Metadata = {
     template: "%s | vonLaim"
   },
   description:
-    "vonLaim aus Germering entwickelt Websites für Handwerksbetriebe: klare Leistungen, Local SEO, Vertrauen und Kontaktwege für bessere Anfragen in Bayern und Deutschland.",
+    "vonLaim baut Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern.",
   openGraph: {
     title: "Webdesign für Handwerker in Bayern | vonLaim",
     description:
-      "Websites für Handwerksbetriebe: klare Leistungen, Local SEO, Vertrauen und Kontaktwege für bessere Anfragen in Bayern und Deutschland.",
+      "Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern.",
     url: appUrl,
     siteName: "vonLaim",
     locale: "de_DE",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Webdesign für Handwerker in Bayern | vonLaim",
     description:
-      "Websites für Handwerksbetriebe: klare Leistungen, Local SEO, Vertrauen und Kontaktwege für bessere Anfragen in Bayern und Deutschland."
+      "Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern."
   },
   alternates: {
     canonical: "/"

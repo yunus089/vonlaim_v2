@@ -48,6 +48,8 @@ import {
 export const dynamic = "force-dynamic";
 
 const siteUrl = process.env.APP_URL ?? "https://www.vonlaim.de";
+const homeDescription =
+  "vonLaim baut Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern.";
 
 const industries = [
   "SHK",
@@ -110,8 +112,7 @@ export default async function HomePage() {
         "@id": `${siteUrl}/#webpage`,
         url: siteUrl,
         name: "vonLaim | Websites für Handwerksbetriebe in Bayern",
-        description:
-          "vonLaim aus Germering bei München entwickelt hochwertige Websites für Handwerksbetriebe und lokale Dienstleister in Bayern und Deutschland, die Vertrauen schaffen, bei Google besser verstanden werden und passende Anfragen erleichtern.",
+        description: homeDescription,
         inLanguage: "de-DE",
         isPartOf: {
           "@id": `${siteUrl}/#website`
@@ -134,8 +135,7 @@ export default async function HomePage() {
         name: "vonLaim",
         url: siteUrl,
         slogan: "Webseiten, die Handwerk sichtbar machen.",
-        description:
-          "Webdesign- und Local-SEO-Agentur aus Germering bei München für Handwerksbetriebe und lokale Dienstleister mit Fokus auf Vertrauen, regionale Sichtbarkeit und passende Anfragen.",
+        description: homeDescription,
         areaServed: [
           {
             "@type": "AdministrativeArea",
