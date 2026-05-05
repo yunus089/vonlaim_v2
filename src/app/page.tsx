@@ -30,6 +30,7 @@ import { HeroMotionBackdrop } from "@/components/HeroMotionBackdrop";
 import { HeroLab } from "@/components/HeroLab";
 import { Icon } from "@/components/Icon";
 import { JsonLd } from "@/components/JsonLd";
+import { PricingCards } from "@/components/PricingCards";
 import { Reveal } from "@/components/Reveal";
 import {
   getContentBlocks,
@@ -49,7 +50,7 @@ export const dynamic = "force-dynamic";
 
 const siteUrl = process.env.APP_URL ?? "https://www.vonlaim.de";
 const homeDescription =
-  "vonLaim baut Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern.";
+  "vonLaim baut Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern. Neue Websites ab 4.900 €.";
 
 const industries = [
   "SHK",
@@ -103,7 +104,7 @@ export default async function HomePage() {
     getFaqs(),
     getContentBlocks()
   ]);
-  const visibleFaqs = faqs.slice(0, 7);
+  const visibleFaqs = faqs.slice(0, 9);
   const homeSchema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -278,6 +279,23 @@ export default async function HomePage() {
           <Reveal delay={120}>
             <HeroLab />
           </Reveal>
+        </div>
+      </section>
+
+      <section className="section alt pricing-section" id="preise">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <span className="eyebrow">Preise</span>
+              <h2>Klare Einstiegspreise, damit der nächste Schritt schneller greifbar ist.</h2>
+            </div>
+            <p>
+              Der Website-Check bleibt kostenlos. Wenn ein Projekt passt,
+              starten neue Websites typischerweise ab 4.900 €, Relaunches ab
+              5.900 € und laufende Pflege ab 490 € pro Monat.
+            </p>
+          </div>
+          <PricingCards />
         </div>
       </section>
 

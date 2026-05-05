@@ -20,11 +20,11 @@ export const metadata: Metadata = {
     template: "%s | vonLaim"
   },
   description:
-    "vonLaim baut Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern.",
+    "vonLaim baut Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern. Neue Websites ab 4.900 €.",
   openGraph: {
     title: "Webdesign für Handwerker in Bayern | vonLaim",
     description:
-      "Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern.",
+      "Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern. Neue Websites ab 4.900 €.",
     url: appUrl,
     siteName: "vonLaim",
     locale: "de_DE",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Webdesign für Handwerker in Bayern | vonLaim",
     description:
-      "Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern."
+      "Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern. Neue Websites ab 4.900 €."
   },
   alternates: {
     canonical: "/"

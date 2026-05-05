@@ -3,6 +3,7 @@ import { Calendar, Menu, Phone } from "lucide-react";
 
 const nav = [
   ["Leistungen", "/leistungen"],
+  ["Preise", "/leistungen#preise"],
   ["Warum vonLaim", "/warum-vonlaim"],
   ["Blog", "/blog"],
   ["FAQ", "/faq"],

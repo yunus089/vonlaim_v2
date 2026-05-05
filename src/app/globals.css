@@ -1809,6 +1809,92 @@ h3 {
   align-self: start;
 }
 
+.pricing-grid {
+  align-items: stretch;
+}
+
+.pricing-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+  min-height: 360px;
+}
+
+.pricing-card-top {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.pricing-card-bottom {
+  display: grid;
+  align-content: end;
+  gap: 1rem;
+}
+
+.pricing-price {
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  color: var(--ink);
+}
+
+.pricing-points {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pricing-points li {
+  display: flex;
+  gap: 0.55rem;
+  align-items: flex-start;
+  color: var(--muted);
+}
+
+.pricing-points svg {
+  flex: 0 0 auto;
+  margin-top: 0.15rem;
+  color: var(--teal);
+}
+
+.pricing-card .btn {
+  width: 100%;
+}
+
+.pricing-card-featured {
+  color: var(--surface);
+  background:
+    linear-gradient(160deg, rgba(6, 12, 13, 0.98), rgba(15, 23, 24, 0.98) 54%, rgba(31, 43, 41, 0.98)),
+    var(--ink);
+  border-color: rgba(200, 242, 92, 0.22);
+  box-shadow: 0 20px 50px rgba(9, 15, 16, 0.18);
+}
+
+.pricing-card-featured::after {
+  background: linear-gradient(90deg, var(--lime), var(--teal));
+}
+
+.pricing-card-featured .eyebrow,
+.pricing-card-featured .muted,
+.pricing-card-featured .pricing-points li {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.pricing-card-featured .pricing-price {
+  color: var(--lime);
+}
+
+.pricing-card-featured .pricing-points svg {
+  color: var(--lime);
+}
+
+.pricing-card-featured .btn-accent {
+  background: var(--lime);
+  color: var(--ink);
+}
+
 .blog-meta {
   color: var(--muted);
   font-size: 0.88rem;

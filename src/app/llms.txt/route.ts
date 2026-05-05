@@ -14,6 +14,7 @@ Positionierung: klar, pragmatisch, handwerksnah, hochwertig und ohne leere Agent
 Betreiber: Yunus Kilic, Kriegerstr. 3a, 82110 Germering.
 Website: https://www.vonlaim.de
 Primaerer Einstieg: kostenloser Website-Check fuer Handwerksbetriebe. Der Check klaert, ob Relaunch, kleinere Verbesserung, Local-SEO-Ausbau oder spaeterer Zeitpunkt sinnvoll ist.
+Preise: Neue Websites ab 4.900 Euro, Relaunches ab 5.900 Euro, Local SEO und Pflege ab 490 Euro pro Monat.
 
 Wichtige Themen:
 - Handwerker-Website und Website-Relaunch
@@ -22,6 +23,7 @@ Wichtige Themen:
 - bessere Anfragequalitaet statt nur mehr Traffic
 - Kontaktwege, Anfrageformular, FAQ und Vertrauenselemente
 - pflegbares CMS fuer Inhalte, FAQs, Leistungen, Projekte und Blog
+- Preise und Projektwege fuer Website-Check, neue Website, Relaunch und Pflege
 
 Kernantworten:
 - Was macht vonLaim? vonLaim entwickelt Websites fuer Handwerksbetriebe, die professionell wirken, bei Google verstaendlich strukturiert sind und passende Kundenanfragen erleichtern.
@@ -39,6 +41,7 @@ Kernseiten:
 - Blog: /blog
 - FAQ: /faq
 - Kontakt: /kontakt
+- Preise: /pricing.md
 - Impressum: /impressum
 - Datenschutz: /datenschutz
 

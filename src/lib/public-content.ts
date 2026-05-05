@@ -278,7 +278,7 @@ const fallbackFaqs: Faq[] = [
     id: "faq-cost",
     question: "Was kostet eine professionelle Website für einen Handwerksbetrieb?",
     answer:
-      "Eine professionelle Handwerker-Website kostet je nach Umfang unterschiedlich. Entscheidend sind Seitenanzahl, Texte, Bilder, Leistungsstruktur, Local SEO, Kontaktformular, CMS und Pflege. vonLaim klärt Kosten, Aufwand und Nutzen zuerst im kostenlosen Erstgespräch.",
+      "Eine professionelle Handwerker-Website kostet je nach Umfang unterschiedlich. Neue Websites starten bei vonLaim typischerweise ab 4.900 €, Relaunches ab 5.900 € und Local SEO / Pflege ab 490 € pro Monat. Entscheidend sind Seitenanzahl, Texte, Bilder, Leistungsstruktur, Local SEO, Kontaktformular, CMS und Pflege. vonLaim klärt Kosten, Aufwand und Nutzen zuerst im kostenlosen Erstgespräch, bevor ein konkretes Angebot entsteht.",
     category: "Kosten"
   },
   {

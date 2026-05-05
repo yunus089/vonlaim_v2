@@ -19,7 +19,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/warum-vonlaim",
     "/blog",
     "/faq",
-    "/kontakt"
+    "/kontakt",
+    "/pricing.md"
   ];
 
   const routes: MetadataRoute.Sitemap = [

@@ -5,6 +5,7 @@ import {
   type AdminContentType,
   getContentConfig
 } from "@/lib/admin-config";
+import { resolveIndexNowUrls, submitIndexNow } from "@/lib/indexnow";
 import { slugify } from "@/lib/slug";
 import { saveUpload } from "@/lib/storage";
 
@@ -107,10 +108,15 @@ export async function createAdminItem(type: string, formData: FormData) {
   );
 
   revalidateFor(type as AdminContentType);
+  await submitIndexNow(resolveIndexNowUrls(type as AdminContentType, values));
 }
 
 export async function updateAdminItem(type: string, id: string, formData: FormData) {
   const config = assertConfig(type);
+  const previous = await queryOne<AdminRow>(
+    `SELECT ${selectColumns(config)} FROM ${config.table} WHERE id = $1`,
+    [id]
+  );
   const values = await valuesFromForm(config, formData);
   const columns = Object.keys(values);
   const params = [...Object.values(values), id];
@@ -132,12 +138,22 @@ export async function updateAdminItem(type: string, id: string, formData: FormDa
   );
 
   revalidateFor(type as AdminContentType);
+  await submitIndexNow(
+    resolveIndexNowUrls(type as AdminContentType, values, previous ?? undefined)
+  );
 }
 
 export async function deleteAdminItem(type: string, id: string) {
   const config = assertConfig(type);
+  const previous = await queryOne<AdminRow>(
+    `SELECT ${selectColumns(config)} FROM ${config.table} WHERE id = $1`,
+    [id]
+  );
   await query(`DELETE FROM ${config.table} WHERE id = $1`, [id]);
   revalidateFor(type as AdminContentType);
+  if (previous) {
+    await submitIndexNow(resolveIndexNowUrls(type as AdminContentType, previous));
+  }
 }
 
 function revalidateFor(type: AdminContentType) {

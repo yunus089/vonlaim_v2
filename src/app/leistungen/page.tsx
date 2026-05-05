@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Icon } from "@/components/Icon";
 import { JsonLd } from "@/components/JsonLd";
+import { PricingCards } from "@/components/PricingCards";
 import { getServices } from "@/lib/public-content";
 import { projectPaths } from "@/lib/site-data";
 
@@ -13,14 +14,14 @@ const siteUrl = process.env.APP_URL ?? "https://www.vonlaim.de";
 export const metadata: Metadata = {
   title: "Webdesign, Local SEO & Website-Pflege fürs Handwerk",
   description:
-    "Strategie, Webdesign, Texte, Local SEO, Anfrageführung und Pflege für Handwerksbetriebe und technische Dienstleister in Bayern und Deutschland.",
+    "Strategie, Webdesign, Texte, Local SEO, Anfrageführung und Pflege für Handwerksbetriebe und technische Dienstleister in Bayern und Deutschland. Neue Websites ab 4.900 €.",
   alternates: {
     canonical: "/leistungen"
   },
   openGraph: {
     title: "Webdesign, Local SEO & Website-Pflege fürs Handwerk | vonLaim",
     description:
-      "Strategie, Webdesign, Texte, Local SEO, Anfrageführung und Pflege für Handwerksbetriebe und technische Dienstleister in Bayern und Deutschland.",
+      "Strategie, Webdesign, Texte, Local SEO, Anfrageführung und Pflege für Handwerksbetriebe und technische Dienstleister in Bayern und Deutschland. Neue Websites ab 4.900 €.",
     url: "/leistungen",
     type: "website"
   }
@@ -68,6 +69,22 @@ export default async function ServicesPage() {
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="section alt pricing-section" id="preise">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <span className="eyebrow">Preise</span>
+              <h2>Die passenden Einstiege sind klar, ohne den Projektumfang vorwegzunehmen.</h2>
+            </div>
+            <p>
+              Der Check bleibt kostenlos. Danach sehen Sie schnell, ob Neue Website,
+              Relaunch oder laufende Pflege für Ihren Betrieb der richtige Weg ist.
+            </p>
+          </div>
+          <PricingCards />
         </div>
       </section>
 

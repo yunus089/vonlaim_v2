@@ -8,14 +8,14 @@ const siteUrl = process.env.APP_URL ?? "https://www.vonlaim.de";
 export const metadata: Metadata = {
   title: "Kostenlosen Website-Check anfragen",
   description:
-    "Kostenlosen Website-Check für Handwerksbetriebe anfragen: Relaunch, Local SEO, bessere Anfragen oder professionellerer erster Eindruck.",
+    "Kostenlosen Website-Check für Handwerksbetriebe anfragen: Relaunch, Local SEO, bessere Anfragen oder professionellerer erster Eindruck. Neue Websites ab 4.900 €.",
   alternates: {
     canonical: "/kontakt"
   },
   openGraph: {
     title: "Kontakt | vonLaim",
     description:
-      "Kostenlosen Website-Check für Handwerksbetriebe anfragen: Relaunch, Local SEO, bessere Anfragen oder professionellerer erster Eindruck.",
+      "Kostenlosen Website-Check für Handwerksbetriebe anfragen: Relaunch, Local SEO, bessere Anfragen oder professionellerer erster Eindruck. Neue Websites ab 4.900 €.",
     url: "/kontakt",
     type: "website"
   }
@@ -80,6 +80,9 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
               Rückruf nach kurzer Abstimmung
             </span>
           </div>
+          <p className="cta-microcopy">
+            Orientierung zu den Einstiegspreisen: Neue Websites ab 4.900 €, Relaunchs ab 5.900 € und Pflege ab 490 € pro Monat.
+          </p>
         </div>
       </section>
 
@@ -151,8 +154,8 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
               <label htmlFor="service_interest">Was möchten Sie verbessern?</label>
               <select id="service_interest" name="service_interest" defaultValue="Kostenloser Website-Check">
                 <option>Kostenloser Website-Check</option>
-                <option>Website-Relaunch</option>
                 <option>Neue Website</option>
+                <option>Website-Relaunch</option>
                 <option>Local SEO / Sichtbarkeit</option>
                 <option>Pflege / Weiterentwicklung</option>
                 <option>Noch unklar</option>

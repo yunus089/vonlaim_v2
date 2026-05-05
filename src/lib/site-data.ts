@@ -27,23 +27,23 @@ export const projectPaths = [
     href: "/kontakt"
   },
   {
-    title: "Website-Relaunch fürs Handwerk",
-    eyebrow: "Kernprojekt",
-    forWhom:
-      "Für Betriebe, deren Website nicht mehr zeigt, wie professionell sie arbeiten.",
-    outcome:
-      "Struktur, Design, Texte, Kontaktführung und technische Grundlage werden neu aufgebaut.",
-    cta: "Relaunch besprechen",
-    href: "/kontakt"
-  },
-  {
     title: "Neue Website für wachsende Betriebe",
-    eyebrow: "Aufbau",
+    eyebrow: "Kernprodukt",
     forWhom:
       "Für Betriebe, die bisher keinen starken Auftritt haben oder professioneller starten wollen.",
     outcome:
       "Sie erhalten eine klare Website mit Leistungsseiten, regionaler Einordnung und pflegbarem CMS.",
     cta: "Neue Website planen",
+    href: "/kontakt"
+  },
+  {
+    title: "Website-Relaunch fürs Handwerk",
+    eyebrow: "Überarbeitung",
+    forWhom:
+      "Für Betriebe, deren Website nicht mehr zeigt, wie professionell sie arbeiten.",
+    outcome:
+      "Struktur, Design, Texte, Kontaktführung und technische Grundlage werden neu aufgebaut.",
+    cta: "Relaunch besprechen",
     href: "/kontakt"
   },
   {
@@ -55,6 +55,69 @@ export const projectPaths = [
       "Die Website wächst strukturiert weiter, statt mit jeder neuen Seite unübersichtlicher zu werden.",
     cta: "Sichtbarkeit prüfen",
     href: "/kontakt"
+  }
+];
+
+export const pricingOffers = [
+  {
+    eyebrow: "Einstieg",
+    title: "Kostenloser Website-Check",
+    price: "0 €",
+    summary:
+      "Wir prüfen Struktur, Texte, Sichtbarkeit und den Kontaktweg Ihres Betriebs.",
+    points: [
+      "15 bis 20 Minuten Orientierung",
+      "Ehrliche Einschätzung statt Verkaufsshow",
+      "Kein Newsletter, kein Druck"
+    ],
+    cta: "Check anfragen",
+    href: "/kontakt",
+    featured: false
+  },
+  {
+    eyebrow: "Kernprodukt",
+    title: "Neue Website",
+    price: "ab 4.900 €",
+    summary:
+      "Für Betriebe, die professionell neu starten und direkt klarer wirken wollen.",
+    points: [
+      "Strategie, Design und Webtexte",
+      "Klare Leistungs- und Kontaktstruktur",
+      "CMS und SEO-Grundlage inklusive"
+    ],
+    cta: "Neue Website planen",
+    href: "/kontakt",
+    featured: true
+  },
+  {
+    eyebrow: "Relaunch",
+    title: "Website-Relaunch",
+    price: "ab 5.900 €",
+    summary:
+      "Für bestehende Websites, die strukturell, visuell und technisch neu sortiert werden sollen.",
+    points: [
+      "Bestand prüfen und weiterentwickeln",
+      "Weiterleitungen und SEO-Basis mitdenken",
+      "Texte, Struktur und Kontaktwege neu ordnen"
+    ],
+    cta: "Relaunch besprechen",
+    href: "/kontakt",
+    featured: false
+  },
+  {
+    eyebrow: "Ausbau",
+    title: "Local SEO & Pflege",
+    price: "ab 490 €/Monat",
+    summary:
+      "Für laufende Verbesserungen, neue Inhalte und kontinuierliche Sichtbarkeit.",
+    points: [
+      "Neue Leistungen, FAQ und Regionseiten",
+      "Pflege ohne Codeänderung",
+      "Laufende technische und inhaltliche Verbesserungen"
+    ],
+    cta: "Sichtbarkeit prüfen",
+    href: "/kontakt",
+    featured: false
   }
 ];
 
