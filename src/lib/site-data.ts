@@ -345,6 +345,294 @@ export const branchLandingPages = [
         "Durch klare Leistungen, echte Bilder, transparente Abläufe, erreichbare Kontaktdaten, FAQ und später echte Referenzen. Vertrauen entsteht durch Nachvollziehbarkeit, nicht durch übertriebene Versprechen."
       ]
     ]
+  },
+  {
+    slug: "webdesign-solar-photovoltaik",
+    title: "Webdesign für Solar- und Photovoltaikbetriebe",
+    h1: "Webdesign für Solar- und Photovoltaikbetriebe, das Beratung und Vertrauen vor dem ersten Termin stärkt.",
+    description:
+      "vonLaim entwickelt Websites für Solarunternehmen, die PV-Anlagen, Speicher, Wallbox, Beratung und regionale Projektanfragen verständlich strukturieren.",
+    audience: "Solarbetriebe, Photovoltaik-Anbieter, Energieberater und technische Dienstleister",
+    services: [
+      "Leistungsseiten für PV-Anlagen, Speicher, Wallbox, Beratung und Wartung",
+      "Anfrageführung für Dachart, Stromverbrauch, Standort und Projektzeitpunkt",
+      "FAQ zu Ablauf, Beratung, Angebot, Förderung und regionaler Umsetzung"
+    ],
+    painPoints: [
+      "Viele Solar-Websites klingen austauschbar und erklären nicht, für welche Projekte der Betrieb wirklich passt.",
+      "Kunden haben viele Vorfragen zu Dach, Speicher, Wallbox und Beratung, bevor sie ein Angebot anfragen.",
+      "Ohne klare Anfragefelder entstehen viele Kontakte ohne verwertbare Projektinformationen."
+    ],
+    faqs: [
+      [
+        "Welche Inhalte braucht eine Website für Solarunternehmen?",
+        "Eine gute Solar-Website sollte PV-Anlagen, Speicher, Wallbox, Beratung, Ablauf, Einzugsgebiet und Kontaktweg klar trennen. Kunden müssen schnell verstehen, ob der Betrieb private, gewerbliche oder komplexere Projekte übernimmt."
+      ],
+      [
+        "Wie kann eine Solar-Website bessere Anfragen erzeugen?",
+        "Sie sollte wichtige Erstinformationen wie Standort, Dachart, gewünschte Leistung, Speicherinteresse und Zeitpunkt strukturiert abfragen. Dadurch kann der Betrieb Anfragen schneller bewerten und Rückfragen reduzieren."
+      ],
+      [
+        "Ist Local SEO für Solarunternehmen sinnvoll?",
+        "Ja. Viele Interessenten suchen regionale Anbieter für Beratung und Umsetzung. Leistungsseiten, Regionseiten und FAQ helfen Suchsystemen, das Angebot lokal besser einzuordnen."
+      ]
+    ]
+  },
+  {
+    slug: "webdesign-sanitaerbetrieb",
+    title: "Webdesign für Sanitärbetriebe",
+    h1: "Webdesign für Sanitärbetriebe, das Leistungen, Beratung und Kontaktwege verständlich macht.",
+    description:
+      "Websites für Sanitärbetriebe sollten Bad, Reparatur, Wartung, Modernisierung und Einsatzgebiet so erklären, dass passende Kunden schneller Kontakt aufnehmen.",
+    audience: "Sanitärbetriebe, Badmodernisierer und lokale SHK-Dienstleister",
+    services: [
+      "Struktur für Bad, Sanitärreparatur, Wartung, Modernisierung und Kundendienst",
+      "Kontaktführung für Terminwunsch, Anliegen, Region und Dringlichkeit",
+      "Vertrauensbereiche für Ablauf, Team, echte Projekte und häufige Fragen"
+    ],
+    painPoints: [
+      "Viele Sanitär-Websites mischen Badplanung, Reparatur und Wartung, sodass Kunden nicht erkennen, was wirklich angeboten wird.",
+      "Der erste Kontakt bleibt oft zu offen und erzeugt Rückfragen statt klarer Termine.",
+      "Ohne Ablauf und Vertrauenselemente wirken auch gute Betriebe online schnell austauschbar."
+    ],
+    faqs: [
+      [
+        "Was gehört auf eine Website für Sanitärbetriebe?",
+        "Wichtig sind klare Leistungsbereiche für Bad, Sanitär, Reparatur, Wartung und Modernisierung, dazu Region, Ablauf, Kontaktmöglichkeiten, Bilder und FAQ. Kunden müssen schnell erkennen, welche Anliegen passen."
+      ],
+      [
+        "Wie kann ein Sanitärbetrieb online Vertrauen aufbauen?",
+        "Durch echte Bilder, klare Kontaktwege, nachvollziehbare Abläufe, sichtbare Region und Antworten auf häufige Fragen. Vertrauen entsteht, wenn Kunden wissen, was nach der Anfrage passiert."
+      ],
+      [
+        "Welche Anfragefelder sind für Sanitärbetriebe sinnvoll?",
+        "Sinnvoll sind Anliegen, Ort, Dringlichkeit, Rückrufnummer, gewünschter Zeitraum und optional Hinweise zur bestehenden Situation. So kann der Betrieb die Anfrage schneller einschätzen."
+      ]
+    ]
+  },
+  {
+    slug: "webdesign-heizungsbauer",
+    title: "Webdesign für Heizungsbauer",
+    h1: "Webdesign für Heizungsbauer, das Modernisierung, Wartung und Beratung klar einordnet.",
+    description:
+      "vonLaim erstellt Websites für Heizungsbauer, die Wärmepumpe, Heizungstausch, Wartung und regionale Beratung verständlich und anfrageorientiert darstellen.",
+    audience: "Heizungsbauer, SHK-Betriebe und Anbieter für Heizungsmodernisierung",
+    services: [
+      "Leistungsseiten für Heizungstausch, Wärmepumpe, Wartung und Modernisierung",
+      "FAQ zu Ablauf, Beratung, Bestandsanlage, Termin und Angebot",
+      "Anfrageführung für Gebäudeart, Bestand, Region und gewünschtes Ziel"
+    ],
+    painPoints: [
+      "Heizungsthemen sind beratungsintensiv, werden online aber oft nur als Leistungsliste dargestellt.",
+      "Kunden wissen selten, welche Informationen für eine erste Einschätzung wichtig sind.",
+      "Ohne klare Struktur gehen hochwertige Modernisierungsanfragen zwischen allgemeinen Serviceanfragen unter."
+    ],
+    faqs: [
+      [
+        "Welche Struktur braucht eine Website für Heizungsbauer?",
+        "Sie sollte Heizungstausch, Wärmepumpe, Wartung, Modernisierung und Beratung verständlich trennen. Zusätzlich braucht sie Region, Ablauf, FAQ und einen einfachen Weg zur Anfrage."
+      ],
+      [
+        "Wie filtert eine Heizungsbauer-Website bessere Anfragen?",
+        "Sie fragt Gebäudeart, bestehende Anlage, Ziel, Ort und Zeitrahmen ab. Dadurch meldet sich der Kunde mit mehr Kontext und der Betrieb kann schneller entscheiden, was passt."
+      ],
+      [
+        "Soll eine Website für Heizungsbauer Preise nennen?",
+        "Pauschale Preise sind oft schwierig. Sinnvoller sind klare Orientierung, typische Einflussfaktoren und ein transparenter Ablauf bis zur Beratung oder zum Vor-Ort-Termin."
+      ]
+    ]
+  },
+  {
+    slug: "webdesign-trockenbau",
+    title: "Webdesign für Trockenbauunternehmen",
+    h1: "Webdesign für Trockenbauunternehmen, das Ausbauleistungen und Projektarten sauber trennt.",
+    description:
+      "Trockenbau-Websites brauchen klare Leistungsbereiche, Projektbeispiele, Zielgruppen und Kontaktwege für private, gewerbliche und größere Ausbauprojekte.",
+    audience: "Trockenbauunternehmen, Innenausbauer und Ausbauhandwerker",
+    services: [
+      "Leistungsseiten für Wände, Decken, Dämmung, Schallschutz und Brandschutz",
+      "Trennung von Privatkunden, Gewerbe, Sanierung und Neubau",
+      "Anfrageführung für Projektart, Fläche, Ort und Zeitplan"
+    ],
+    painPoints: [
+      "Viele Trockenbau-Websites erklären nicht, welche Projektgrößen und Kundentypen zum Betrieb passen.",
+      "Ohne Beispiele und klare Leistungsstruktur wirkt der Betrieb beliebig.",
+      "Unvollständige Anfragen kosten Zeit, weil Fläche, Ort und Ziel fehlen."
+    ],
+    faqs: [
+      [
+        "Welche Inhalte braucht eine Trockenbau-Website?",
+        "Wichtig sind Leistungsbereiche wie Wände, Decken, Dämmung, Schallschutz und Brandschutz, dazu Projektarten, Einzugsgebiet, Ablauf und Kontaktmöglichkeiten."
+      ],
+      [
+        "Wie kann ein Trockenbauunternehmen bessere Anfragen bekommen?",
+        "Die Website sollte Projektart, Fläche, Ort, Zeitrahmen und gewünschte Leistung klar abfragen. Dadurch entstehen weniger unklare Kontakte und bessere Erstgespräche."
+      ],
+      [
+        "Sind Referenzen im Trockenbau wichtig?",
+        "Ja, besonders bei gewerblichen Projekten, Ausbau und Sanierung. Referenzen zeigen Projektumfang, Qualität und Erfahrung, ohne dass der Betrieb alles behaupten muss."
+      ]
+    ]
+  },
+  {
+    slug: "webdesign-bauunternehmen",
+    title: "Webdesign für Bauunternehmen",
+    h1: "Webdesign für Bauunternehmen, das Leistungsumfang, Projektarten und Vertrauen sichtbar macht.",
+    description:
+      "Bauunternehmen brauchen Websites, die Leistungen, Projektgrößen, Region, Ablauf und Kontaktwege so erklären, dass passende Anfragen leichter entstehen.",
+    audience: "Bauunternehmen, Bauhandwerker, Sanierungs- und Ausbauunternehmen",
+    services: [
+      "Struktur für Neubau, Umbau, Sanierung, Ausbau und Projektleistungen",
+      "Projektbereiche für spätere Referenzen, Bilder und Fallstudien",
+      "Anfrageführung für Projektart, Standort, Zeitraum und gewünschte Leistung"
+    ],
+    painPoints: [
+      "Viele Bau-Websites nennen Leistungen, zeigen aber nicht, welche Projektarten wirklich passen.",
+      "Ohne echte Struktur wirkt ein erfahrener Betrieb online kleiner oder unklarer, als er ist.",
+      "Bei Bauprojekten entstehen viele Rückfragen, wenn Anfrageweg und Ablauf fehlen."
+    ],
+    faqs: [
+      [
+        "Was gehört auf eine Website für Bauunternehmen?",
+        "Eine Bau-Website sollte Leistungen, Projektarten, Region, Ablauf, Kontaktwege, Bilder und später Referenzen klar strukturieren. Kunden müssen erkennen, für welche Bauvorhaben der Betrieb geeignet ist."
+      ],
+      [
+        "Wie baut ein Bauunternehmen online Vertrauen auf?",
+        "Durch nachvollziehbare Leistungen, echte Projektbilder, klare Ansprechpartner, Ablaufbeschreibungen und transparente Kontaktwege. Vertrauen entsteht vor allem durch konkrete Einordnung."
+      ],
+      [
+        "Welche Anfrageinformationen sind bei Bauprojekten wichtig?",
+        "Wichtig sind Projektart, Ort, Zeitrahmen, gewünschte Leistung, Kontaktperson und kurze Beschreibung. Diese Informationen helfen, passende Anfragen schneller zu bewerten."
+      ]
+    ]
+  },
+  {
+    slug: "webdesign-fliesenleger",
+    title: "Webdesign für Fliesenleger",
+    h1: "Webdesign für Fliesenleger, das Projektbilder, Leistungen und Anfrageweg klar verbindet.",
+    description:
+      "Websites für Fliesenleger sollten Bad, Boden, Sanierung, Neubau, Projektbilder und regionale Erreichbarkeit verständlich darstellen.",
+    audience: "Fliesenleger, Bad-Sanierer und Ausbauhandwerker",
+    services: [
+      "Leistungsseiten für Bad, Boden, Wand, Sanierung und Neubau",
+      "Bildbereiche für echte Projekte, Materialien und Vorher/Nachher",
+      "Kontaktführung für Ort, Fläche, Projektart und Zeitrahmen"
+    ],
+    painPoints: [
+      "Die Qualität von Fliesenarbeiten ist visuell, wird online aber oft zu wenig konkret gezeigt.",
+      "Kunden erkennen nicht immer, ob kleine Reparaturen, Bäder oder größere Projekte passen.",
+      "Ohne strukturierte Anfrage fehlen häufig Ort, Fläche und Projektumfang."
+    ],
+    faqs: [
+      [
+        "Was macht eine gute Website für Fliesenleger aus?",
+        "Sie zeigt Leistungen, Projektarten, echte Bilder, Region und Kontaktweg klar. Besonders wichtig sind Bad, Boden, Sanierung, Neubau und Hinweise darauf, welche Aufträge gut passen."
+      ],
+      [
+        "Sind Projektbilder für Fliesenleger wichtig?",
+        "Ja. Projektbilder machen Qualität, Stil und Erfahrung sichtbar. Sie sollten echt, sauber beschrieben und später nach Projektart oder Raum sortiert werden."
+      ],
+      [
+        "Welche Angaben sollte ein Fliesenleger-Formular abfragen?",
+        "Hilfreich sind Ort, Raum oder Fläche, Projektart, Zeitrahmen, Kontaktdaten und eine kurze Beschreibung. Dadurch kann der Betrieb schneller sinnvoll antworten."
+      ]
+    ]
+  },
+  {
+    slug: "webdesign-schreiner-tischler",
+    title: "Webdesign für Schreiner und Tischler",
+    h1: "Webdesign für Schreiner und Tischler, das Maßarbeit online greifbar macht.",
+    description:
+      "vonLaim entwickelt Websites für Schreiner und Tischler, die Innenausbau, Möbelbau, Türen, Küchen oder Maßanfertigungen klar und hochwertig präsentieren.",
+    audience: "Schreinereien, Tischlereien und Betriebe für Innenausbau",
+    services: [
+      "Leistungsstruktur für Möbel, Innenausbau, Türen, Küchen und Maßanfertigungen",
+      "Bild- und Projektbereiche für echte Arbeiten und Materialien",
+      "Anfrageführung für Wunsch, Raum, Material, Ort und Zeitrahmen"
+    ],
+    painPoints: [
+      "Maßarbeit lebt von Vertrauen und Bildern, wird online aber oft nur allgemein beschrieben.",
+      "Kunden wissen häufig nicht, welche Leistungen und Projektgrößen angenommen werden.",
+      "Ohne gute Projektstruktur bleibt hochwertige Arbeit schwer vergleichbar."
+    ],
+    faqs: [
+      [
+        "Welche Inhalte braucht eine Website für Schreiner?",
+        "Sie braucht klare Leistungsbereiche, echte Projektbilder, Materialien, Ablauf, Region und Kontaktweg. Kunden müssen schnell erkennen, welche Art von Maßarbeit der Betrieb übernimmt."
+      ],
+      [
+        "Wie kann eine Schreiner-Website hochwertige Anfragen fördern?",
+        "Sie sollte Projektarten, Materialien, Beispiele und Ablauf erklären. So melden sich eher Interessenten mit konkreter Vorstellung statt nur mit einer kurzen Preisfrage."
+      ],
+      [
+        "Sind Referenzen für Schreiner und Tischler wichtig?",
+        "Ja, besonders echte Bilder und Projektbeschreibungen. Sie zeigen Stil, Qualität und Erfahrung viel glaubwürdiger als allgemeine Werbeaussagen."
+      ]
+    ]
+  },
+  {
+    slug: "webdesign-gartenbau-galabau",
+    title: "Webdesign für Gartenbau und GaLaBau",
+    h1: "Webdesign für Gartenbau und GaLaBau, das Projekte, Pflege und Beratung sauber erklärt.",
+    description:
+      "GaLaBau-Websites sollten Gartenplanung, Pflege, Pflaster, Außenanlagen, Projektbilder und regionale Anfragen klar verbinden.",
+    audience: "Gartenbauer, GaLaBau-Betriebe und Dienstleister für Außenanlagen",
+    services: [
+      "Leistungsseiten für Gartenplanung, Pflaster, Pflege, Außenanlagen und Sanierung",
+      "Projektbereiche für Bilder, Vorher/Nachher und saisonale Arbeiten",
+      "Anfrageführung für Grundstück, Ort, Projektart und gewünschte Leistung"
+    ],
+    painPoints: [
+      "Viele GaLaBau-Seiten zeigen schöne Bilder, erklären aber Leistungen und Projektumfang zu wenig.",
+      "Kunden unterscheiden nicht immer zwischen Pflege, Planung, Pflaster und kompletter Außenanlage.",
+      "Saisonale Nachfrage braucht klare Kontaktwege und realistische Erwartung."
+    ],
+    faqs: [
+      [
+        "Was gehört auf eine Website für Gartenbau und GaLaBau?",
+        "Wichtig sind Leistungen wie Gartenplanung, Pflege, Pflaster, Außenanlagen und Sanierung, dazu Projektbilder, Region, Ablauf und einfache Anfragewege."
+      ],
+      [
+        "Wie kann eine GaLaBau-Website bessere Anfragen erzeugen?",
+        "Sie sollte Projektart, Grundstück, Ort, Zeitrahmen und gewünschte Leistung abfragen. Zusätzlich helfen Bilder und klare Leistungsbereiche, damit Kunden sich besser einordnen."
+      ],
+      [
+        "Sind saisonale Inhalte für Gartenbau sinnvoll?",
+        "Ja, wenn sie echten Nutzen bieten. Saisonale Hinweise zu Pflege, Planung oder Projektzeitpunkt helfen Kunden und können regionale Sichtbarkeit stärken."
+      ]
+    ]
+  },
+  {
+    slug: "webdesign-fensterbau",
+    title: "Webdesign für Fensterbauer",
+    h1: "Webdesign für Fensterbauer, das Sanierung, Montage und Beratung verständlich macht.",
+    description:
+      "Websites für Fensterbauer sollten Fenster, Türen, Sanierung, Energie, Montage, Region und Kontaktweg klar strukturieren.",
+    audience: "Fensterbauer, Türenbauer, Montagebetriebe und Sanierungsanbieter",
+    services: [
+      "Struktur für Fenster, Türen, Sanierung, Montage und Beratung",
+      "FAQ zu Energie, Ablauf, Aufmaß, Angebot und Förderung",
+      "Anfrageführung für Objektart, Anzahl, Region und gewünschte Leistung"
+    ],
+    painPoints: [
+      "Kunden haben vor einer Anfrage viele Fragen zu Aufmaß, Material, Energie und Ablauf.",
+      "Ohne klare Struktur wirken Beratung, Montage und Sanierung schnell wie austauschbare Leistungen.",
+      "Unklare Formulare führen zu Rückfragen statt verwertbaren Projektinformationen."
+    ],
+    faqs: [
+      [
+        "Welche Inhalte braucht eine Website für Fensterbauer?",
+        "Sie sollte Fenster, Türen, Sanierung, Montage, Beratung, Region und Ablauf klar erklären. Zusätzlich helfen FAQ zu Aufmaß, Material, Energie und Angebot."
+      ],
+      [
+        "Wie bekommt ein Fensterbauer bessere Anfragen?",
+        "Die Website sollte Objektart, Anzahl der Elemente, Ort, gewünschte Leistung und Zeitrahmen abfragen. So kann der Betrieb die Anfrage schneller bewerten."
+      ],
+      [
+        "Ist Local SEO für Fensterbauer relevant?",
+        "Ja. Fenster- und Sanierungsanfragen sind oft regional. Klare Leistungsseiten, Orte, FAQ und Kontaktinformationen helfen Kunden und Suchsystemen."
+      ]
+    ]
   }
 ];
 
@@ -381,5 +669,93 @@ export const regionLandingPages = [
     nearby: ["Fürstenfeldbruck", "Germering", "Puchheim", "Olching", "Emmering"],
     focus:
       "Für Betriebe, die regional stark verwurzelt sind und online besser zeigen wollen, welche Leistungen und Orte wirklich zu ihnen passen."
+  },
+  {
+    slug: "webdesign-handwerker-augsburg",
+    title: "Webdesign für Handwerker in Augsburg",
+    h1: "Webdesign für Handwerker in Augsburg.",
+    description:
+      "vonLaim unterstützt Handwerksbetriebe in Augsburg mit Websites, die Leistungen, Einzugsgebiet, Vertrauen und Kontaktwege klar für lokale Kunden strukturieren.",
+    region: "Augsburg",
+    nearby: ["Friedberg", "Königsbrunn", "Gersthofen", "Neusäß", "Aichach"],
+    focus:
+      "Für Betriebe im Raum Augsburg, die online professioneller auftreten, lokale Anfragen besser einordnen und ihre Leistungen verständlicher darstellen möchten."
+  },
+  {
+    slug: "webdesign-handwerker-ingolstadt",
+    title: "Webdesign für Handwerker in Ingolstadt",
+    h1: "Webdesign für Handwerker in Ingolstadt.",
+    description:
+      "Websites für Handwerksbetriebe in Ingolstadt, die technische Leistungen, regionale Nähe und klare Anfragewege professionell sichtbar machen wollen.",
+    region: "Ingolstadt",
+    nearby: ["Gaimersheim", "Manching", "Kösching", "Eichstätt", "Neuburg an der Donau"],
+    focus:
+      "Für technische Dienstleister und Handwerksbetriebe rund um Ingolstadt, die online kompetent wirken und passende Kundenanfragen leichter erhalten möchten."
+  },
+  {
+    slug: "webdesign-handwerker-nuernberg",
+    title: "Webdesign für Handwerker in Nürnberg",
+    h1: "Webdesign für Handwerker in Nürnberg.",
+    description:
+      "vonLaim erstellt Websites für Handwerksbetriebe in Nürnberg, die Leistungen, Region, Vertrauen und Kontaktführung modern und verständlich präsentieren möchten.",
+    region: "Nürnberg",
+    nearby: ["Fürth", "Erlangen", "Schwabach", "Stein", "Zirndorf"],
+    focus:
+      "Für Betriebe im Raum Nürnberg, die aus einem großen lokalen Markt heraus klarer sichtbar werden und online professioneller überzeugen möchten."
+  },
+  {
+    slug: "webdesign-handwerker-regensburg",
+    title: "Webdesign für Handwerker in Regensburg",
+    h1: "Webdesign für Handwerker in Regensburg.",
+    description:
+      "Websites für Handwerksbetriebe in Regensburg, die regionale Sichtbarkeit, klare Leistungsseiten und bessere Kontaktwege aufbauen wollen.",
+    region: "Regensburg",
+    nearby: ["Neutraubling", "Lappersdorf", "Kelheim", "Schwandorf", "Straubing"],
+    focus:
+      "Für lokale Betriebe in Regensburg und Umgebung, die online leichter gefunden werden und Interessenten vor dem ersten Gespräch besser orientieren möchten."
+  },
+  {
+    slug: "webdesign-handwerker-rosenheim",
+    title: "Webdesign für Handwerker in Rosenheim",
+    h1: "Webdesign für Handwerker in Rosenheim.",
+    description:
+      "vonLaim unterstützt Handwerksbetriebe in Rosenheim mit Websites, die regionale Nähe, Leistungen und Vertrauen für lokale Kunden klar verbinden.",
+    region: "Rosenheim",
+    nearby: ["Kolbermoor", "Bad Aibling", "Raubling", "Prien am Chiemsee", "Wasserburg am Inn"],
+    focus:
+      "Für Betriebe in Rosenheim und Oberbayern, die sichtbar machen wollen, welche Leistungen, Orte und Projektarten wirklich zu ihnen passen."
+  },
+  {
+    slug: "webdesign-handwerker-landshut",
+    title: "Webdesign für Handwerker in Landshut",
+    h1: "Webdesign für Handwerker in Landshut.",
+    description:
+      "Websites für Handwerksbetriebe in Landshut, die professioneller auftreten, regionale Suchbarkeit verbessern und passende Anfragen erleichtern möchten.",
+    region: "Landshut",
+    nearby: ["Ergolding", "Altdorf", "Moosburg", "Dingolfing", "Freising"],
+    focus:
+      "Für regionale Handwerksbetriebe in Landshut, die online klarer erklären möchten, was sie anbieten, wo sie arbeiten und wie Kunden Kontakt aufnehmen."
+  },
+  {
+    slug: "webdesign-handwerker-freising",
+    title: "Webdesign für Handwerker in Freising",
+    h1: "Webdesign für Handwerker in Freising.",
+    description:
+      "vonLaim entwickelt Websites für Handwerksbetriebe in Freising, die Leistungen, Einzugsgebiet und Kontaktwege professionell und lokal relevant darstellen.",
+    region: "Freising",
+    nearby: ["Eching", "Neufahrn", "Hallbergmoos", "Moosburg", "Erding"],
+    focus:
+      "Für Betriebe im Raum Freising, die zwischen lokalem Handwerk, technischem Dienstleister und wachsendem Mittelstand klarer positioniert werden möchten."
+  },
+  {
+    slug: "webdesign-handwerker-dachau",
+    title: "Webdesign für Handwerker in Dachau",
+    h1: "Webdesign für Handwerker in Dachau.",
+    description:
+      "Websites für Handwerksbetriebe in Dachau, die in der Region München-West sichtbarer werden und ihre Leistungen verständlicher präsentieren möchten.",
+    region: "Dachau",
+    nearby: ["Karlsfeld", "Olching", "Fürstenfeldbruck", "München-West", "Markt Indersdorf"],
+    focus:
+      "Für lokale Betriebe in Dachau und Umgebung, die nahbar bleiben und trotzdem online professionell genug wirken wollen, um bessere Anfragen zu erhalten."
   }
 ];

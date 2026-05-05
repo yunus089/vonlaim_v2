@@ -430,22 +430,7 @@ async function main() {
     );
   }
 
-  await client.query(
-    `
-      INSERT INTO posts(title, slug, excerpt, content, category, tags, status, published_at, seo_title, seo_description)
-      VALUES ($1,$2,$3,$4,$5,$6,'published', now(), $7, $8)
-      ON CONFLICT (slug) DO UPDATE
-      SET title = EXCLUDED.title,
-          excerpt = EXCLUDED.excerpt,
-          content = EXCLUDED.content,
-          category = EXCLUDED.category,
-          tags = EXCLUDED.tags,
-          status = EXCLUDED.status,
-          published_at = EXCLUDED.published_at,
-          seo_title = EXCLUDED.seo_title,
-          seo_description = EXCLUDED.seo_description,
-          updated_at = now()
-    `,
+  const blogPosts: Array<[string, string, string, string, string, string, string, string]> = [
     [
       "Handwerker-Website: Warum klare Struktur bessere Anfragen bringt",
       "warum-handwerksbetriebe-klare-website-brauchen",
@@ -455,8 +440,99 @@ async function main() {
       "Handwerk, Website, Vertrauen, Local SEO",
       "Handwerker-Website: Warum klare Struktur bessere Anfragen bringt | vonLaim",
       "Wie eine klare Website Handwerksbetrieben hilft, Vertrauen aufzubauen, lokale Sichtbarkeit zu stärken und bessere Anfragen zu erhalten."
+    ],
+    [
+      "Was kostet eine Website für Handwerker wirklich?",
+      "website-kosten-handwerker",
+      "Eine Handwerker-Website sollte bezahlbar starten, aber nicht so billig geplant werden, dass Struktur, Texte und Kontaktführung fehlen.",
+      "Eine Website für Handwerker kostet nicht nur wegen Design oder Technik Geld. Entscheidend ist, ob sie Leistungen erklärt, Vertrauen aufbaut, regionale Nähe zeigt und passende Anfragen erleichtert.\n\nBei vonLaim beginnen kompakte Starter-Websites ab 990 Euro. Vollständige neue Websites starten ab 1.990 Euro, Relaunches ab 2.990 Euro. Laufende Pflege und Local SEO beginnen ab 290 Euro pro Monat. Ein CMS ist nicht automatisch enthalten und kann optional ab 490 Euro je Projekt ergänzt werden.\n\nDer Unterschied liegt im Umfang. Eine Starter-Website kann sinnvoll sein, wenn ein kleiner Betrieb schnell professioneller sichtbar werden möchte. Eine vollständige Website lohnt sich, wenn mehrere Leistungen, klare Texte, regionale Struktur und ein besserer Kontaktweg nötig sind. Ein Relaunch ist sinnvoll, wenn bereits Inhalte, alte URLs, Sichtbarkeit oder mehrere Seiten sauber übernommen und neu sortiert werden müssen.\n\nWichtig ist: Der niedrigste Preis ist nicht automatisch der beste Preis. Eine Website, die unklare Anfragen erzeugt oder keine Pflegegrundlage hat, kostet später oft mehr Zeit. Deshalb prüft vonLaim zuerst im kostenlosen Website-Check, welcher Umfang wirklich passt.\n\nDirekte Antwort: Eine kompakte Handwerker-Website kann ab 990 Euro starten. Für eine vollständige, professionell strukturierte Website sollte ein Betrieb bei vonLaim typischerweise ab 1.990 Euro planen.",
+      "Kosten",
+      "Website Kosten, Handwerker Website, Webdesign Preise, CMS",
+      "Was kostet eine Website für Handwerker? Preise & Umfang | vonLaim",
+      "Orientierung zu Website-Kosten für Handwerksbetriebe: Starter ab 990 Euro, neue Website ab 1.990 Euro, Relaunch ab 2.990 Euro und CMS optional."
+    ],
+    [
+      "Starter-Website oder Relaunch: Was passt zu Ihrem Betrieb?",
+      "starter-website-oder-relaunch",
+      "Nicht jeder Betrieb braucht sofort einen großen Relaunch. Entscheidend ist, ob die aktuelle Website noch als Grundlage taugt oder neu sortiert werden muss.",
+      "Eine Starter-Website passt, wenn ein Betrieb schnell professionell sichtbar werden möchte und noch keine komplexe Seitenstruktur braucht. Sie ist sinnvoll für kleine Betriebe, junge Unternehmen oder lokale Dienstleister, die vor allem Vertrauen und Erreichbarkeit verbessern wollen.\n\nEin Relaunch passt, wenn bereits eine Website existiert, diese aber nicht mehr zeigt, wie professionell der Betrieb arbeitet. Typische Gründe sind veraltete Optik, unklare Leistungen, schlechte mobile Darstellung, fehlende Kontaktführung oder alte Inhalte, die neu geordnet werden müssen.\n\nDer wichtigste Unterschied: Eine Starter-Website schafft eine saubere Grundlage. Ein Relaunch muss zusätzlich Bestand prüfen, alte URLs beachten, vorhandene Inhalte bewerten und Sichtbarkeit möglichst schützen.\n\nDirekte Entscheidungshilfe: Wenn Sie bisher kaum online präsent sind, reicht oft ein Starter. Wenn Sie bereits Seiten, Inhalte, Rankings oder viele Leistungen haben, ist ein Relaunch meist der bessere Weg.\n\nvonLaim klärt im Website-Check, welcher Schritt wirtschaftlich sinnvoll ist. Das Ziel ist nicht das größte Projekt, sondern eine Website, die zu Betrieb, Budget und Kundenerwartung passt.",
+      "Entscheidung",
+      "Starter Website, Relaunch, Handwerker Website, Website Check",
+      "Starter-Website oder Relaunch für Handwerker? | vonLaim",
+      "Wann eine Starter-Website reicht und wann ein Relaunch für Handwerksbetriebe sinnvoller ist."
+    ],
+    [
+      "Braucht ein kleiner Handwerksbetrieb ein CMS?",
+      "cms-handwerksbetrieb",
+      "Ein CMS ist praktisch, aber nicht für jeden Betrieb sofort Pflicht. Es lohnt sich, wenn Inhalte regelmäßig wachsen oder intern gepflegt werden sollen.",
+      "Ein CMS erlaubt es, Inhalte ohne Code zu bearbeiten. Für Handwerksbetriebe kann das sinnvoll sein, wenn Blogartikel, FAQ, Leistungen, Referenzen, Bilder oder Regionseiten regelmäßig ergänzt werden sollen.\n\nEin kleiner Betrieb braucht aber nicht automatisch ein CMS. Wenn die Website zunächst kompakt bleibt und Änderungen selten vorkommen, kann eine saubere statische Struktur günstiger und einfacher sein. Deshalb ist CMS bei vonLaim nicht automatisch im Website-Projekt enthalten, sondern als optionale Erweiterung ab 490 Euro verfügbar.\n\nEin CMS lohnt sich besonders, wenn neue Leistungen dazukommen, Referenzen gepflegt werden sollen oder Local SEO über Inhalte wachsen soll. Es lohnt sich weniger, wenn nach dem Launch kaum Änderungen geplant sind.\n\nDirekte Antwort: Ein CMS ist für Handwerksbetriebe sinnvoll, wenn Inhalte regelmäßig gepflegt werden sollen. Für einen einfachen Start kann es optional bleiben und später ergänzt werden.\n\nWichtig ist die Rollenverteilung: Der Betrieb soll nicht an Technik hängen bleiben. Die Website muss pflegbar sein, aber nicht unnötig kompliziert werden.",
+      "CMS",
+      "CMS, Website Pflege, Handwerk, Content Management",
+      "Braucht ein Handwerksbetrieb ein CMS? | vonLaim",
+      "Wann ein CMS für Handwerksbetriebe sinnvoll ist, wann nicht und warum vonLaim es als optionalen Ausbau anbietet."
+    ],
+    [
+      "Local SEO für Handwerker: Was wirklich zählt",
+      "local-seo-handwerker",
+      "Local SEO hilft Handwerksbetrieben, regional besser verstanden zu werden. Entscheidend sind klare Leistungen, Orte, Vertrauen und Kontaktwege.",
+      "Local SEO bedeutet nicht, möglichst oft einen Ortsnamen auf eine Seite zu schreiben. Für Handwerker zählt vor allem, dass Google, Bing, KI-Suche und echte Kunden verstehen, welche Leistungen der Betrieb anbietet und in welchem Gebiet er arbeitet.\n\nEine gute Local-SEO-Struktur verbindet Leistungsseiten, Region, Kontaktinformationen, FAQ, Bilder, Referenzen und ein gepflegtes Google Unternehmensprofil. Dadurch wird ein Betrieb nicht nur sichtbarer, sondern auch besser eingeordnet.\n\nWichtig sind konsistente Kontaktdaten, klare Servicebereiche, sinnvolle Regionseiten und Inhalte, die echte Fragen beantworten. Eine Seite wie „Webdesign für Handwerker in München“ sollte erklären, warum die Region relevant ist, welche Gewerke passen und welcher nächste Schritt sinnvoll ist.\n\nDirekte Antwort: Local SEO für Handwerker funktioniert über klare Leistungen, lokale Einordnung, Vertrauen, FAQ, saubere Technik und konsistente Kontaktdaten. Keyword-Stuffing hilft nicht.\n\nvonLaim baut Websites so auf, dass regionale Sichtbarkeit von Anfang an mitgedacht wird, ohne die Seite künstlich oder überladen wirken zu lassen.",
+      "Local SEO",
+      "Local SEO, Handwerker, Google Unternehmensprofil, regionale Sichtbarkeit",
+      "Local SEO für Handwerker: Leistungen, Orte, Vertrauen | vonLaim",
+      "Was bei Local SEO für Handwerksbetriebe wirklich zählt: klare Leistungen, regionale Struktur, Vertrauen und Kontaktwege."
+    ],
+    [
+      "Baukasten oder Agentur: Was passt für Handwerksbetriebe?",
+      "baukasten-oder-agentur-handwerk",
+      "Ein Baukasten kann für einfache Präsenz reichen. Sobald Vertrauen, Struktur, Texte und bessere Anfragen wichtig werden, braucht es mehr Planung.",
+      "Ein Website-Baukasten ist nicht grundsätzlich schlecht. Für sehr kleine Betriebe, die nur Adresse, Telefonnummer und ein paar Bilder zeigen möchten, kann er ein schneller Einstieg sein.\n\nDas Problem entsteht, wenn ein Baukasten eine professionelle Website ersetzen soll. Dann fehlen oft klare Leistungsstruktur, überzeugende Texte, lokale Suchlogik, saubere Kontaktführung und spätere Erweiterbarkeit. Die Seite sieht vielleicht ordentlich aus, beantwortet aber nicht die Fragen, die Kunden vor der Anfrage wirklich haben.\n\nEine Agentur lohnt sich, wenn die Website Anfragen verbessern, Vertrauen aufbauen, regional gefunden werden und mit dem Betrieb wachsen soll. Gerade im Handwerk zählt nicht nur Gestaltung, sondern Orientierung: Was wird angeboten? Wo arbeitet der Betrieb? Welche Projekte passen? Wie läuft der Kontakt?\n\nDirekte Antwort: Ein Baukasten reicht für einfache Sichtbarkeit. Eine Agentur ist sinnvoll, wenn die Website strategisch verkaufen, erklären und passende Anfragen erleichtern soll.\n\nvonLaim positioniert sich bewusst dazwischen: zugängliche Einstiegspreise, aber mit Struktur, Texten und sauberem Anfrageweg statt leerer Optik.",
+      "Vergleich",
+      "Baukasten, Agentur, Webdesign Handwerk, Website Vergleich",
+      "Baukasten oder Agentur für Handwerker? | vonLaim",
+      "Wann ein Website-Baukasten reicht und wann eine Agentur für Handwerksbetriebe sinnvoller ist."
+    ],
+    [
+      "Kontaktformular für Handwerker: Welche Felder wirklich sinnvoll sind",
+      "kontaktformular-handwerker",
+      "Ein gutes Kontaktformular fragt nicht möglichst viel ab. Es fragt genau das ab, was für eine schnelle erste Einschätzung hilft.",
+      "Viele Kontaktformulare im Handwerk sind entweder zu knapp oder zu kompliziert. Zu knapp bedeutet: Der Betrieb bekommt eine Nachricht ohne Kontext. Zu kompliziert bedeutet: Der Kunde bricht ab, bevor er absendet.\n\nSinnvoll sind wenige, klare Felder: Name, Kontaktweg, Gewerk oder Anliegen, Region, optionale Website und eine kurze Beschreibung. Je nach Branche können zusätzliche Angaben helfen, etwa Objektart bei Reinigung, Dachart bei Solar oder Fläche bei Trockenbau.\n\nWichtig ist, dass Pflichtfelder wirklich notwendig sind. Eine Website-URL sollte optional sein und auch ohne „https://“ akzeptiert werden. Datenschutz muss sauber abgefragt werden. Nach dem Absenden sollte der Kunde wissen, was als Nächstes passiert.\n\nDirekte Antwort: Ein gutes Handwerker-Formular fragt die wichtigsten Informationen für eine erste Einschätzung ab, ohne den Kunden mit unnötigen Pflichtfeldern zu bremsen.\n\nvonLaim plant Kontaktformulare so, dass Anfragen verwertbarer werden und der Betrieb schneller reagieren kann.",
+      "Anfragen",
+      "Kontaktformular, Handwerker, Form UX, Anfragequalität",
+      "Kontaktformular für Handwerker: sinnvolle Felder | vonLaim",
+      "Welche Felder ein Kontaktformular für Handwerksbetriebe braucht, damit Kunden leichter anfragen und Betriebe schneller reagieren können."
+    ],
+    [
+      "Website-Relaunch ohne Sichtbarkeitsverlust: Die wichtigsten Punkte",
+      "website-relaunch-ohne-seo-verlust",
+      "Ein Relaunch darf nicht nur schöner machen. Er muss bestehende Inhalte, URLs, Suchsignale und Kontaktwege sauber neu ordnen.",
+      "Ein Website-Relaunch kann einem Handwerksbetrieb helfen, moderner zu wirken und bessere Anfragen zu bekommen. Er kann aber auch Sichtbarkeit kosten, wenn alte Inhalte, URLs und Suchsignale ignoriert werden.\n\nWichtig sind eine Bestandsaufnahme, Weiterleitungen, neue Seitenstruktur, klare Meta-Daten, saubere interne Links und ein Blick auf bisherige Inhalte. Gute bestehende Texte oder Seiten sollten nicht einfach gelöscht werden, nur weil das Design neu wird.\n\nEin Relaunch ist besonders sinnvoll, wenn die alte Website mobil schwach ist, Leistungen unklar sind, Google den Betrieb nicht richtig einordnet oder Kunden zu viele Rückfragen stellen.\n\nDirekte Antwort: Ein Relaunch ohne Sichtbarkeitsverlust braucht Planung, URL-Prüfung, Weiterleitungen, Inhaltsbewertung, klare Struktur und technische Kontrolle nach dem Launch.\n\nvonLaim prüft deshalb vor einem Relaunch, welche Inhalte erhalten, verbessert oder neu aufgebaut werden sollten.",
+      "Relaunch",
+      "Website Relaunch, SEO Verlust, Handwerker Website, Weiterleitungen",
+      "Website-Relaunch ohne SEO-Verlust | vonLaim",
+      "Die wichtigsten Punkte für einen Website-Relaunch im Handwerk: Inhalte, URLs, Weiterleitungen, Struktur und Kontaktführung."
     ]
-  );
+  ];
+
+  for (const post of blogPosts) {
+    await client.query(
+      `
+        INSERT INTO posts(title, slug, excerpt, content, category, tags, status, published_at, seo_title, seo_description)
+        VALUES ($1,$2,$3,$4,$5,$6,'published', now(), $7, $8)
+        ON CONFLICT (slug) DO UPDATE
+        SET title = EXCLUDED.title,
+            excerpt = EXCLUDED.excerpt,
+            content = EXCLUDED.content,
+            category = EXCLUDED.category,
+            tags = EXCLUDED.tags,
+            status = EXCLUDED.status,
+            published_at = COALESCE(posts.published_at, EXCLUDED.published_at),
+            seo_title = EXCLUDED.seo_title,
+            seo_description = EXCLUDED.seo_description,
+            updated_at = now()
+      `,
+      post
+    );
+  }
 
   const blocks = [
     [
