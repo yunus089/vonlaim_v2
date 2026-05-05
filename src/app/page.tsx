@@ -50,7 +50,7 @@ export const dynamic = "force-dynamic";
 
 const siteUrl = process.env.APP_URL ?? "https://www.vonlaim.de";
 const homeDescription =
-  "vonLaim baut Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern. Neue Websites ab 4.900 €.";
+  "vonLaim baut Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern. Starter ab 990 €, neue Websites ab 1.990 €.";
 
 const industries = [
   "SHK",
@@ -163,7 +163,7 @@ export default async function HomePage() {
           "Local SEO",
           "Conversion-Optimierung",
           "Website-Relaunch für lokale Betriebe",
-          "CMS für Unternehmenswebsites"
+          "Optionale CMS-Erweiterung für Unternehmenswebsites"
         ],
         hasOfferCatalog: {
           "@type": "OfferCatalog",
@@ -291,8 +291,9 @@ export default async function HomePage() {
             </div>
             <p>
               Der Website-Check bleibt kostenlos. Wenn ein Projekt passt,
-              starten neue Websites typischerweise ab 4.900 €, Relaunches ab
-              5.900 € und laufende Pflege ab 490 € pro Monat.
+              starten kompakte Starter-Websites ab 990 €, vollständige Websites
+              ab 1.990 € und laufende Pflege ab 290 € pro Monat. Ein CMS kann
+              optional ab 490 € ergänzt werden.
             </p>
           </div>
           <PricingCards />

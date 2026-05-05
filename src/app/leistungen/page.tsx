@@ -14,14 +14,14 @@ const siteUrl = process.env.APP_URL ?? "https://www.vonlaim.de";
 export const metadata: Metadata = {
   title: "Webdesign, Local SEO & Website-Pflege fürs Handwerk",
   description:
-    "Strategie, Webdesign, Texte, Local SEO, Anfrageführung und Pflege für Handwerksbetriebe und technische Dienstleister in Bayern und Deutschland. Neue Websites ab 4.900 €.",
+    "Strategie, Webdesign, Texte, Local SEO, Anfrageführung und Pflege für Handwerksbetriebe und technische Dienstleister. Starter ab 990 €, neue Websites ab 1.990 €.",
   alternates: {
     canonical: "/leistungen"
   },
   openGraph: {
     title: "Webdesign, Local SEO & Website-Pflege fürs Handwerk | vonLaim",
     description:
-      "Strategie, Webdesign, Texte, Local SEO, Anfrageführung und Pflege für Handwerksbetriebe und technische Dienstleister in Bayern und Deutschland. Neue Websites ab 4.900 €.",
+      "Strategie, Webdesign, Texte, Local SEO, Anfrageführung und Pflege für Handwerksbetriebe und technische Dienstleister. Starter ab 990 €, neue Websites ab 1.990 €.",
     url: "/leistungen",
     type: "website"
   }
@@ -81,7 +81,8 @@ export default async function ServicesPage() {
             </div>
             <p>
               Der Check bleibt kostenlos. Danach sehen Sie schnell, ob Neue Website,
-              Relaunch oder laufende Pflege für Ihren Betrieb der richtige Weg ist.
+              Relaunch, optionales CMS oder laufende Pflege für Ihren Betrieb der
+              richtige Weg ist.
             </p>
           </div>
           <PricingCards />

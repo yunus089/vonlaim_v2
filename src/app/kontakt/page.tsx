@@ -8,14 +8,14 @@ const siteUrl = process.env.APP_URL ?? "https://www.vonlaim.de";
 export const metadata: Metadata = {
   title: "Kostenlosen Website-Check anfragen",
   description:
-    "Kostenlosen Website-Check für Handwerksbetriebe anfragen: Relaunch, Local SEO, bessere Anfragen oder professionellerer erster Eindruck. Neue Websites ab 4.900 €.",
+    "Kostenlosen Website-Check für Handwerksbetriebe anfragen: Starter ab 990 €, neue Websites ab 1.990 €, Local SEO und Pflege ab 290 € pro Monat.",
   alternates: {
     canonical: "/kontakt"
   },
   openGraph: {
     title: "Kontakt | vonLaim",
     description:
-      "Kostenlosen Website-Check für Handwerksbetriebe anfragen: Relaunch, Local SEO, bessere Anfragen oder professionellerer erster Eindruck. Neue Websites ab 4.900 €.",
+      "Kostenlosen Website-Check für Handwerksbetriebe anfragen: Starter ab 990 €, neue Websites ab 1.990 €, Local SEO und Pflege ab 290 € pro Monat.",
     url: "/kontakt",
     type: "website"
   }
@@ -81,7 +81,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
             </span>
           </div>
           <p className="cta-microcopy">
-            Orientierung zu den Einstiegspreisen: Neue Websites ab 4.900 €, Relaunchs ab 5.900 € und Pflege ab 490 € pro Monat.
+            Orientierung zu den Einstiegspreisen: Starter ab 990 €, neue Websites ab 1.990 €, Relaunches ab 2.990 € und Pflege ab 290 € pro Monat. CMS optional ab 490 €.
           </p>
         </div>
       </section>
@@ -154,8 +154,10 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
               <label htmlFor="service_interest">Was möchten Sie verbessern?</label>
               <select id="service_interest" name="service_interest" defaultValue="Kostenloser Website-Check">
                 <option>Kostenloser Website-Check</option>
+                <option>Starter-Website</option>
                 <option>Neue Website</option>
                 <option>Website-Relaunch</option>
+                <option>CMS-Erweiterung</option>
                 <option>Local SEO / Sichtbarkeit</option>
                 <option>Pflege / Weiterentwicklung</option>
                 <option>Noch unklar</option>

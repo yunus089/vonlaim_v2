@@ -1,4 +1,4 @@
-import { pricingOffers } from "@/lib/site-data";
+import { pricingAddOns, pricingOffers } from "@/lib/site-data";
 
 const siteUrl = process.env.APP_URL ?? "https://www.vonlaim.de";
 
@@ -20,8 +20,12 @@ export async function GET() {
     `Stand: ${new Date().toISOString().slice(0, 10)}`,
     "",
     "vonLaim baut Websites für Handwerksbetriebe, die klar wirken, lokal verständlich sind und bessere Anfragen erleichtern.",
+    "Das CMS ist nicht automatisch im Website-Projekt enthalten. Es kann je nach Bedarf optional ergänzt werden.",
     "",
     ...pricingOffers.flatMap((offer) => ["", sectionForOffer(offer)]),
+    "",
+    "## Optionale Erweiterungen",
+    ...pricingAddOns.flatMap((offer) => ["", sectionForOffer({ ...offer, cta: "CMS besprechen", href: "/kontakt", featured: false })]),
     "",
     "Kontakt:",
     `- Website: ${siteUrl}`,

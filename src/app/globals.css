@@ -1809,8 +1809,14 @@ h3 {
   align-self: start;
 }
 
+.pricing-stack {
+  display: grid;
+  gap: 1rem;
+}
+
 .pricing-grid {
   align-items: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
 }
 
 .pricing-card {
@@ -1832,7 +1838,7 @@ h3 {
 }
 
 .pricing-price {
-  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  font-size: clamp(1.55rem, 3vw, 2.1rem);
   font-weight: 900;
   letter-spacing: 0;
   color: var(--ink);
@@ -1893,6 +1899,35 @@ h3 {
 .pricing-card-featured .btn-accent {
   background: var(--lime);
   color: var(--ink);
+}
+
+.pricing-addon {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(260px, 0.85fr);
+  gap: 1.2rem;
+  align-items: center;
+  border: 1px solid rgba(13, 91, 99, 0.22);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(120deg, rgba(200, 242, 92, 0.12), transparent 44%),
+    var(--surface);
+  padding: clamp(1rem, 2vw, 1.4rem);
+}
+
+.pricing-addon h3,
+.pricing-addon p {
+  margin: 0;
+}
+
+.pricing-addon p:not(.eyebrow) {
+  color: var(--ink-soft);
+}
+
+.pricing-addon-price {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 900;
+  color: var(--teal);
+  white-space: nowrap;
 }
 
 .blog-meta {
@@ -2552,6 +2587,11 @@ h3 {
   .footer-grid,
   .admin-layout {
     grid-template-columns: 1fr;
+  }
+
+  .pricing-addon {
+    grid-template-columns: 1fr;
+    align-items: start;
   }
 
   .hero-layout {

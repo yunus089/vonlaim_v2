@@ -32,7 +32,7 @@ export const projectPaths = [
     forWhom:
       "Für Betriebe, die bisher keinen starken Auftritt haben oder professioneller starten wollen.",
     outcome:
-      "Sie erhalten eine klare Website mit Leistungsseiten, regionaler Einordnung und pflegbarem CMS.",
+      "Sie erhalten eine klare Website mit Leistungsseiten, regionaler Einordnung und optional erweiterbarem CMS.",
     cta: "Neue Website planen",
     href: "/kontakt"
   },
@@ -75,15 +75,30 @@ export const pricingOffers = [
     featured: false
   },
   {
+    eyebrow: "Starter",
+    title: "Starter-Website",
+    price: "ab 990 €",
+    summary:
+      "Für kleine Betriebe, die schnell professioneller wirken und erreichbar sein wollen.",
+    points: [
+      "Kompakter Seitenaufbau",
+      "Klare Startbotschaft und Kontaktweg",
+      "Solide Grundlage für späteren Ausbau"
+    ],
+    cta: "Starter planen",
+    href: "/kontakt",
+    featured: false
+  },
+  {
     eyebrow: "Kernprodukt",
     title: "Neue Website",
-    price: "ab 4.900 €",
+    price: "ab 1.990 €",
     summary:
       "Für Betriebe, die professionell neu starten und direkt klarer wirken wollen.",
     points: [
       "Strategie, Design und Webtexte",
       "Klare Leistungs- und Kontaktstruktur",
-      "CMS und SEO-Grundlage inklusive"
+      "SEO-Grundlage vorbereitet"
     ],
     cta: "Neue Website planen",
     href: "/kontakt",
@@ -92,7 +107,7 @@ export const pricingOffers = [
   {
     eyebrow: "Relaunch",
     title: "Website-Relaunch",
-    price: "ab 5.900 €",
+    price: "ab 2.990 €",
     summary:
       "Für bestehende Websites, die strukturell, visuell und technisch neu sortiert werden sollen.",
     points: [
@@ -107,7 +122,7 @@ export const pricingOffers = [
   {
     eyebrow: "Ausbau",
     title: "Local SEO & Pflege",
-    price: "ab 490 €/Monat",
+    price: "ab 290 €/Monat",
     summary:
       "Für laufende Verbesserungen, neue Inhalte und kontinuierliche Sichtbarkeit.",
     points: [
@@ -118,6 +133,21 @@ export const pricingOffers = [
     cta: "Sichtbarkeit prüfen",
     href: "/kontakt",
     featured: false
+  }
+];
+
+export const pricingAddOns = [
+  {
+    eyebrow: "Optionaler Ausbau",
+    title: "CMS-Erweiterung",
+    price: "ab 490 €",
+    summary:
+      "Für Website-Projekte, bei denen Inhalte später ohne Code gepflegt werden sollen.",
+    points: [
+      "Admin-Login für ausgewählte Inhalte",
+      "Pflege von Blog, FAQ, Leistungen oder Projekten möglich",
+      "Sinnvoll, wenn die Website regelmäßig wachsen soll"
+    ]
   }
 ];
 

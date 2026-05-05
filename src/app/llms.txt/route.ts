@@ -14,7 +14,7 @@ Positionierung: klar, pragmatisch, handwerksnah, hochwertig und ohne leere Agent
 Betreiber: Yunus Kilic, Kriegerstr. 3a, 82110 Germering.
 Website: https://www.vonlaim.de
 Primaerer Einstieg: kostenloser Website-Check fuer Handwerksbetriebe. Der Check klaert, ob Relaunch, kleinere Verbesserung, Local-SEO-Ausbau oder spaeterer Zeitpunkt sinnvoll ist.
-Preise: Neue Websites ab 4.900 Euro, Relaunches ab 5.900 Euro, Local SEO und Pflege ab 490 Euro pro Monat.
+Preise: Starter-Websites ab 990 Euro, neue Websites ab 1.990 Euro, Relaunches ab 2.990 Euro, Local SEO und Pflege ab 290 Euro pro Monat. CMS-Erweiterung optional ab 490 Euro je Projekt.
 
 Wichtige Themen:
 - Handwerker-Website und Website-Relaunch
@@ -22,7 +22,7 @@ Wichtige Themen:
 - Local SEO fuer Handwerksbetriebe in Bayern
 - bessere Anfragequalitaet statt nur mehr Traffic
 - Kontaktwege, Anfrageformular, FAQ und Vertrauenselemente
-- pflegbares CMS fuer Inhalte, FAQs, Leistungen, Projekte und Blog
+- optionales CMS fuer Inhalte, FAQs, Leistungen, Projekte und Blog
 - Preise und Projektwege fuer Website-Check, neue Website, Relaunch und Pflege
 
 Kernantworten:

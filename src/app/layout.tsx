@@ -20,11 +20,11 @@ export const metadata: Metadata = {
     template: "%s | vonLaim"
   },
   description:
-    "vonLaim baut Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern. Neue Websites ab 4.900 €.",
+    "vonLaim baut Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern. Starter ab 990 €, neue Websites ab 1.990 €.",
   openGraph: {
     title: "Webdesign für Handwerker in Bayern | vonLaim",
     description:
-      "Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern. Neue Websites ab 4.900 €.",
+      "Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern. Starter ab 990 €, neue Websites ab 1.990 €.",
     url: appUrl,
     siteName: "vonLaim",
     locale: "de_DE",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Webdesign für Handwerker in Bayern | vonLaim",
     description:
-      "Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern. Neue Websites ab 4.900 €."
+      "Websites für Handwerksbetriebe, die klar wirken, bei Google besser gefunden werden und Anfragen erleichtern. Starter ab 990 €, neue Websites ab 1.990 €."
   },
   alternates: {
     canonical: "/"
@@ -96,7 +96,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           "Conversion-Optimierung",
           "Handwerker-Websites",
           "Websites für lokale Dienstleister",
-          "CMS für Unternehmenswebsites"
+          "Optionale CMS-Erweiterung für Unternehmenswebsites"
         ],
         potentialAction: {
           "@type": "ContactAction",
